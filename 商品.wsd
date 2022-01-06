@@ -1,0 +1,79 @@
+@startuml
+
+entity 商品 {
+
+}
+entity 分类 {
+    
+}
+entity 规格属性 {
+    type：规格/属性
+    name
+}
+entity 品牌 {
+
+}
+entity 商品审核 {
+
+}
+entity 商品流水 {
+
+}
+entity 商品描述 {
+
+}
+entity 商品页模板 {
+
+}
+entity 评价 {
+
+}
+entity 回复 {
+    评价_id
+    to回复_id
+    top回复_id
+}
+entity 点赞 {
+    biz_type：评价/回复
+    biz_id：业务 id
+    u_id：用户 id
+}
+entity 举报 {
+    biz_type：业务类型
+    biz_id：业务 id
+    u_id：用户 id
+}
+entity SKU {
+
+}
+entity 浏览 {
+
+}
+entity 收藏 {
+
+}
+
+商品 }|-l-|| 分类
+分类 ||..|{ 店铺
+分类 ||-l-|{ 规格属性
+商品 }|--|| 品牌
+商品 ||--|| 商品审核
+商品 ||--|{ 商品流水
+商品 ||-u-|| 商品描述
+商品描述 ||-o| 商品页模板
+商品 ||--|{ SKU
+
+商品 ||-|{ 评价
+评价 |o.|| 订单
+评价 ||--o{ 回复
+点赞 }|.l.|| 用户
+举报 }|.|| 用户
+
+商品 ||--|{ 浏览
+浏览 }|..|| 用户
+
+商品 ||--|{ 收藏
+收藏 }|..|| 用户
+
+
+@enduml
