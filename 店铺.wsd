@@ -1,0 +1,5 @@
+@startuml
+
+店铺 }|..|| 分类
+
+@enduml
