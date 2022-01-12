@@ -1,4 +1,4 @@
-@startuml
+@startuml 营销UML
 
 entity 优惠券 {
     名称

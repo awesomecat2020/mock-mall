@@ -1,4 +1,4 @@
-@startuml
+@startuml 店铺UML
 
 店铺 }|..|| 分类
 

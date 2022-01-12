@@ -1,0 +1,45 @@
+@startuml 用户UML
+
+entity 用户 {
+    姓名
+    手机号
+}
+entity 商品浏览 {
+    ' 保存一个月（另定）
+    用户 id
+    商品 id
+}
+entity 商品收藏 {
+    用户 id
+    商品 id
+}
+entity 点赞 {
+    biz_type：评价/回复
+    biz_id：业务 id
+    u_id：用户 id
+}
+entity 举报 {
+    biz_type：业务类型
+    biz_id：业务 id
+    u_id：用户 id
+}
+entity 用户地址 {
+
+}
+entity 购物车 {
+
+}
+
+商品 ||..|{ 商品浏览
+商品浏览 }|--|| 用户
+商品 ||..|{ 商品收藏
+商品收藏 }|--|| 用户
+
+点赞 }|-l-|| 用户
+举报 }|-|| 用户
+
+用户 ||--|{ 用户地址
+用户 ||--|| 购物车
+购物车 ||..|{ SKU
+
+@enduml
