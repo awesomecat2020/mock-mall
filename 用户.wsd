@@ -3,6 +3,7 @@
 entity 用户 {
     姓名
     手机号
+    身份：买家/卖家
 }
 entity 商品浏览 {
     ' 保存一个月（另定）
@@ -24,7 +25,7 @@ entity 举报 {
     u_id：用户 id
 }
 entity 用户地址 {
-
+    用户 id
 }
 entity 购物车 {
 
