@@ -1,4 +1,4 @@
-@startuml 用户UML
+@startuml 会员UML
 
 entity 用户 {
     姓名
