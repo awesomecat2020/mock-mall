@@ -1,4 +1,5 @@
 @startuml 订单UML
+hide empty members
 
 ' ==================== 订单 ====================
 entity 订单 {

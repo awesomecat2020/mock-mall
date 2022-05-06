@@ -1,4 +1,5 @@
 @startuml 店铺UML
+hide empty members
 
 entity 店铺 {
     名称

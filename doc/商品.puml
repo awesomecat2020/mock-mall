@@ -1,4 +1,5 @@
 @startuml 商品UML
+hide empty members
 
 ' ==================== 商品 ====================
 entity 商品 {

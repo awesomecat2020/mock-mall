@@ -1,4 +1,5 @@
 @startuml 会员UML
+hide empty members
 
 entity 用户 {
     姓名
@@ -88,5 +89,6 @@ entity 地区 {
     ' 用于对地名根据字幕排序的需求
     拼音
 }
+
 
 @enduml

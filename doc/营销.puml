@@ -1,4 +1,5 @@
 @startuml 营销UML
+hide empty members
 
 entity 等级 {
     店铺 id
