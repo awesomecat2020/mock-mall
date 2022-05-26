@@ -1,5 +1,6 @@
 @startuml 会员UML
 hide empty members
+skinparam linetype ortho
 
 entity 用户 {
     姓名

@@ -1,5 +1,6 @@
 @startuml 商品UML
 hide empty members
+skinparam linetype ortho
 
 ' ==================== 商品 ====================
 entity 商品 {

@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mock.mall</groupId>
-	<artifactId>dictionary</artifactId>
+	<artifactId>dictionary-soa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dictionary</name>
-	<description>dictionary</description>
+	<name>dictionary-soa</name>
+	<description>dictionary-soa</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
