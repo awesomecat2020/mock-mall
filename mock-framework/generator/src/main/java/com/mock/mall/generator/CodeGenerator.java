@@ -1,50 +1,88 @@
 package com.mock.mall.generator;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
+import com.baomidou.mybatisplus.generator.config.OutputFile;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Collections;
 
 /**
+ * 代码生成器
+ *
  * @author awesomecat
  * @date 2022/5/27 0:12
  */
 public class CodeGenerator {
 
-    /**
-     *  执行初始化数据库脚本
-     */
-    // public static void before() throws SQLException {
-    //     Connection conn = DATA_SOURCE_CONFIG.build().getConn();
-    //     InputStream inputStream = H2CodeGeneratorTest.class.getResourceAsStream("/sql/init.sql");
-    //     ScriptRunner scriptRunner = new ScriptRunner(conn);
-    //     scriptRunner.setAutoCommit(true);
-    //     scriptRunner.runScript(new InputStreamReader(inputStream));
-    //     conn.close();
-    // }
+    /** jdbc */
+    private static final String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/zdy_mybatis";
+
+    /** username */
+    private static final String USERNAME = "root";
+
+    /** password */
+    private static final String PASSWORD = "123456";
+
+    /** 项目总路径 */
+    private static final String PROJECT_PATH = "D:\\IDEA\\workspace\\item\\mock-mall\\mock-pms\\product-soa";
+
+    /** 模块包名 */
+    private static final String MODULE_NAME = "product";
+
+    /** mapper */
+    private static final String MAPPER = "mapper";
+
+    /** entity */
+    private static final String ENTITY = "model";
+
+    /** xml */
+    private static final String XML = "mapper";
+
 
     /**
-     *  数据源配置
+     * 执行  run
      */
-    private static final DataSourceConfig.Builder DATA_SOURCE_CONFIG = new DataSourceConfig
-            .Builder("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;MODE=MYSQL", "sa", "");
-
-    public static void main(String[] args) {
-        FastAutoGenerator.create(DATA_SOURCE_CONFIG)
-                //  全局配置
-                .globalConfig((scanner, builder) -> builder.author(scanner.apply("ccomma")))
-                //  包配置
-                .packageConfig((scanner, builder) -> builder.parent(scanner.apply("请输入包名")))
-                //  策略配置
-                .strategyConfig((scanner, builder) -> builder.addInclude(scanner.apply("请输入表名，多个表名用，隔开")))
-                /*
-                     模板引擎配置，默认  Velocity  可选模板引擎  Beetl  或  Freemarker
-                   .templateEngine(new BeetlTemplateEngine())
-                   .templateEngine(new FreemarkerTemplateEngine())
-                 */
+    public static void main(String[] args) throws SQLException {
+        FastAutoGenerator.create(JDBC_URL, USERNAME, PASSWORD)
+                .globalConfig(builder -> {
+                    builder.author("ccomma") // 设置作者
+                            .enableSwagger() // 开启 swagger 模式
+                            .fileOverride() // 覆盖已生成文件
+                            .outputDir(PROJECT_PATH + "\\src\\main\\java"); // 指定输出目录
+                })
+                .packageConfig(builder -> {
+                    builder.parent("com.mock.mall") // 设置父包名
+                            .moduleName(MODULE_NAME)
+                            .mapper(MAPPER)
+                            .entity(ENTITY)
+                            .xml(XML)
+                            .pathInfo(Collections.singletonMap(OutputFile.mapperXml, PROJECT_PATH + "\\src\\main\\resources\\mapper")); // 设置mapperXml生成路径
+                })
+                .strategyConfig(builder -> {
+                    builder.addInclude("orders"); // 设置需要生成的表名
+                    builder.entityBuilder()
+                            // .superClass() // 设置父类
+                            .enableLombok() // lombok
+                            .enableRemoveIsPrefix() // Boolean 类型字段移除 is 前缀
+                            .enableTableFieldAnnotation() // 生成实体时生成字段注解
+                            // .logicDeleteColumnName("is_valid") // 逻辑删除字段名 (数据库)
+                            // .logicDeletePropertyName("isValid") // 逻辑删除属性名 (实体)
+                            .idType(IdType.INPUT) // 全局主键类型
+                    ;
+                })
+                // 使用Freemarker引擎模板，默认的是Velocity引擎模板
+                // .templateConfig(builder -> {
+                //     builder.entity("/templates/entity.java")
+                //             .service("/templates/service.java")
+                //             .serviceImpl("/templates/serviceImpl.java")
+                //             .mapper("/templates/mapper.java")
+                //             .mapperXml("/templates/mapper.xml")
+                //             .controller("/templates/controller.java");
+                // })
+                // .templateEngine(new FreemarkerTemplateEngine())
                 .execute();
+
     }
+
 }
