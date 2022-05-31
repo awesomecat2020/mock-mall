@@ -10,7 +10,7 @@ import java.util.Collections;
 /**
  * 代码生成器
  *
- * @author awesomecat
+ * @author ccomma
  * @date 2022/5/27 0:12
  */
 public class CodeGenerator {
@@ -68,7 +68,7 @@ public class CodeGenerator {
                             .enableTableFieldAnnotation() // 生成实体时生成字段注解
                             // .logicDeleteColumnName("is_valid") // 逻辑删除字段名 (数据库)
                             // .logicDeletePropertyName("isValid") // 逻辑删除属性名 (实体)
-                            .idType(IdType.INPUT) // 全局主键类型
+                            .idType(IdType.ASSIGN_ID) // 全局主键类型
                     ;
                 })
                 // 使用Freemarker引擎模板，默认的是Velocity引擎模板
