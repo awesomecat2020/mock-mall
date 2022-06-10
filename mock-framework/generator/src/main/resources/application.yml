@@ -1,9 +1,9 @@
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://localhost:3306/isearch?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+      url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
       username: root
-      password:
+      password: 123456
       driver-class-name: com.mysql.jdbc.Driver
       initial-size: 20
       max-active: 100
@@ -20,3 +20,8 @@ spring:
       remove-abandoned-timeout: 1800
       log-abandoned: true
       connection-init-sqls: set names utf8mb4
+
+mapper:
+  mappers: com.mock.mall.commonbase.mapper.BaseMapper
+  not-empty: false
+  identity: MYSQL

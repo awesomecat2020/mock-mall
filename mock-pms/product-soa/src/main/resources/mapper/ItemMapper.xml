@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mock.mall.product.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.mock.mall.product.entity.Item">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="cat_id" jdbcType="VARCHAR" property="catId" />
+    <result column="root_cat_id" jdbcType="VARCHAR" property="rootCatId" />
+    <result column="sell_counts" jdbcType="INTEGER" property="sellCounts" />
+    <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+</mapper>
