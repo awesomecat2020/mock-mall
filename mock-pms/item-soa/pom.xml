@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mock.mall</groupId>
-    <artifactId>product-soa</artifactId>
+    <artifactId>item-soa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>product-soa</name>
-    <description>product-soa</description>
+    <name>item-soa</name>
+    <description>item-soa</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
