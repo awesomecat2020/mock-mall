@@ -36,7 +36,7 @@
         </javaTypeResolver>
 
         <!-- 实体类的包名和存放路径 -->
-        <javaModelGenerator targetPackage="com.mock.mall.product.entity" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.mock.mall.item.entity" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
@@ -47,7 +47,7 @@
         </sqlMapGenerator>
 
         <!-- 生成DAO的包名和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mock.mall.product.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mock.mall.item.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 

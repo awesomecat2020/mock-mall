@@ -1,4 +1,4 @@
-package com.mock.mall.product.entity;
+package com.mock.mall.item.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
