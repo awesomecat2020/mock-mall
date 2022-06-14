@@ -22,6 +22,6 @@ spring:
       connection-init-sqls: set names utf8mb4
 
 mapper:
-  mappers: com.mock.mall.commonbase.mapper.BaseMapper
+  mappers: com.mockmall.commonbase.mapper.BaseMapper
   not-empty: false
   identity: MYSQL

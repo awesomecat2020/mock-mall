@@ -11,7 +11,7 @@
 
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
             <!-- 自定义mapper -->
-            <property name="mappers" value="com.mock.mall.commonbase.mapper.BaseMapper"/>
+            <property name="mappers" value="com.mockmall.commonbase.mapper.BaseMapper"/>
             <property name="caseSensitive" value="true"/>
             <!-- 默认 -->
 <!--            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>-->
