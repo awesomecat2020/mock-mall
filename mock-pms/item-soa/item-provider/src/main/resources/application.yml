@@ -33,5 +33,6 @@ spring:
 
 # mybatis
 mybatis:
-  type-aliases-package: com.mock.mall.product.entity
+  type-aliases-package: com.mockmall.product.entity
   mapper-locations: classpath:mapper/*.xml
+  base-packages: com.mockmall.item.mapper
