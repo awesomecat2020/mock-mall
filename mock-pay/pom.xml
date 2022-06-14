@@ -8,6 +8,9 @@
     <name>mock-pay</name>
     <description>mock-pay</description>
     <packaging>pom</packaging>
+    <modules>
+        <module>pay-soa</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>

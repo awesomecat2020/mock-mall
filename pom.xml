@@ -13,6 +13,7 @@
         <module>mock-sms</module>
         <module>mock-system</module>
         <module>mock-ums</module>
+        <module>mock-web</module>
     </modules>
     <packaging>pom</packaging>
     <groupId>com.mock.mall</groupId>

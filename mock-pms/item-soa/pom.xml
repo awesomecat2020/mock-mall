@@ -8,11 +8,20 @@
         <version>2.7.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
     <groupId>com.mock.mall</groupId>
     <artifactId>item-soa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <name>item-soa</name>
     <description>item-soa</description>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>item-client</module>
+        <module>item-provider</module>
+    </modules>
+
     <properties>
         <java.version>1.8</java.version>
     </properties>
