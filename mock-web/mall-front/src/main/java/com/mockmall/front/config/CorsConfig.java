@@ -10,7 +10,6 @@ import org.springframework.web.filter.CorsFilter;
  * CORS
  *
  * @author ccomma
- * @since 2022/6/16 0:27
  */
 @Configuration
 public class CorsConfig {

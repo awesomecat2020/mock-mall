@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试
  *
  * @author ccomma
- * @since 2022/6/14 8:19
  */
 @RestController
 public class TestController {
