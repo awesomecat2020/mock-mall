@@ -12,9 +12,9 @@
         <property name="javaFileEncoding" value="utf-8"/>
 
         <plugin type="com.mockmall.generator.plugin.LombokPlugin">
-<!--            <property name="builder" value="false"/>-->
-<!--            <property name="noArgsConstructor" value="false"/>-->
-<!--            <property name="allArgsConstructor" value="true"/>-->
+            <!--            <property name="builder" value="false"/>-->
+            <!--            <property name="noArgsConstructor" value="false"/>-->
+            <!--            <property name="allArgsConstructor" value="true"/>-->
         </plugin>
         <plugin type="com.mockmall.generator.plugin.SerializePlugin">
         </plugin>
@@ -62,7 +62,9 @@
         </javaClientGenerator>
 
         <!-- tableName：数据库中的表名或视图名；domainObjectName：生成的实体类的类名-->
-        <table tableName="carousel" domainObjectName="Carousel"/>
-        <table tableName="item" domainObjectName="Item"/>
+        <table tableName="carousel" domainObjectName="Carousel"
+               enableDeleteByPrimaryKey="false"/>
+        <table tableName="item" domainObjectName="Item"
+               enableDeleteByPrimaryKey="false"/>
     </context>
 </generatorConfiguration>

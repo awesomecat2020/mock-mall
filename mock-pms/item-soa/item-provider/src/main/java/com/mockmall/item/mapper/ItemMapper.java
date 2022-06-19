@@ -1,17 +1,10 @@
 package com.mockmall.item.mapper;
 
 import com.mockmall.item.pojo.Item;
+
 import java.util.List;
 
 public interface ItemMapper {
-    /**
-     * 根据主键删除
-     * 
-     * @param id 主键
-     * @return 影响条数
-     * @author ccomma
-     */
-    int deleteByPrimaryKey(String id);
 
     /**
      * 新增
