@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.item.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.Item">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="cat_id" jdbcType="VARCHAR" property="catId" />
+    <result column="root_cat_id" jdbcType="VARCHAR" property="rootCatId" />
+    <result column="sell_counts" jdbcType="INTEGER" property="sellCounts" />
+    <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from item
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.Item">
+    insert into item (id, item_name, cat_id, 
+      root_cat_id, sell_counts, on_off_status, 
+      version, is_valid, create_time, 
+      update_time, content)
+    values (#{id,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{catId,jdbcType=VARCHAR}, 
+      #{rootCatId,jdbcType=VARCHAR}, #{sellCounts,jdbcType=INTEGER}, #{onOffStatus,jdbcType=INTEGER}, 
+      #{version,jdbcType=INTEGER}, #{isValid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.Item">
+    update item
+    set item_name = #{itemName,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=VARCHAR},
+      root_cat_id = #{rootCatId,jdbcType=VARCHAR},
+      sell_counts = #{sellCounts,jdbcType=INTEGER},
+      on_off_status = #{onOffStatus,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+  </select>
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.Item">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="cat_id" jdbcType="VARCHAR" property="catId" />
+    <result column="root_cat_id" jdbcType="VARCHAR" property="rootCatId" />
+    <result column="sell_counts" jdbcType="INTEGER" property="sellCounts" />
+    <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from item
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.Item">
+    insert into item (id, item_name, cat_id, 
+      root_cat_id, sell_counts, on_off_status, 
+      version, is_valid, create_time, 
+      update_time, content)
+    values (#{id,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{catId,jdbcType=VARCHAR}, 
+      #{rootCatId,jdbcType=VARCHAR}, #{sellCounts,jdbcType=INTEGER}, #{onOffStatus,jdbcType=INTEGER}, 
+      #{version,jdbcType=INTEGER}, #{isValid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.Item">
+    update item
+    set item_name = #{itemName,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=VARCHAR},
+      root_cat_id = #{rootCatId,jdbcType=VARCHAR},
+      sell_counts = #{sellCounts,jdbcType=INTEGER},
+      on_off_status = #{onOffStatus,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+  </select>
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.Item">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="cat_id" jdbcType="VARCHAR" property="catId" />
+    <result column="root_cat_id" jdbcType="VARCHAR" property="rootCatId" />
+    <result column="sell_counts" jdbcType="INTEGER" property="sellCounts" />
+    <result column="on_off_status" jdbcType="INTEGER" property="onOffStatus" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from item
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.Item">
+    insert into item (id, item_name, cat_id, 
+      root_cat_id, sell_counts, on_off_status, 
+      version, is_valid, create_time, 
+      update_time, content)
+    values (#{id,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, #{catId,jdbcType=VARCHAR}, 
+      #{rootCatId,jdbcType=VARCHAR}, #{sellCounts,jdbcType=INTEGER}, #{onOffStatus,jdbcType=INTEGER}, 
+      #{version,jdbcType=INTEGER}, #{isValid,jdbcType=BIT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.Item">
+    update item
+    set item_name = #{itemName,jdbcType=VARCHAR},
+      cat_id = #{catId,jdbcType=VARCHAR},
+      root_cat_id = #{rootCatId,jdbcType=VARCHAR},
+      sell_counts = #{sellCounts,jdbcType=INTEGER},
+      on_off_status = #{onOffStatus,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=BIT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, item_name, cat_id, root_cat_id, sell_counts, on_off_status, version, is_valid, 
+    create_time, update_time, content
+    from item
+  </select>
+</mapper>

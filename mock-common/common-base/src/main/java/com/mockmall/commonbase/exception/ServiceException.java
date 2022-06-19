@@ -1,4 +1,4 @@
-package com.mockmall.commonbase.exceptions;
+package com.mockmall.commonbase.exception;
 
 /**
  * 服务异常

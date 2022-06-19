@@ -25,26 +25,14 @@
     <properties>
         <java.version>1.8</java.version>
         <common-base.version>0.0.1-SNAPSHOT</common-base.version>
-        <item-client.version>0.0.1-SNAPSHOT</item-client.version>
         <dubbo.version>3.0.8</dubbo.version>
         <curator-x-discovery.version>4.2.0</curator-x-discovery.version>
         <mybatis-spring-boot-starter.version>2.2.2</mybatis-spring-boot-starter.version>
+        <tk-mybatis-spring-boot.version>2.1.5</tk-mybatis-spring-boot.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- client -->
-            <dependency>
-                <groupId>com.mock.mall</groupId>
-                <artifactId>common-base</artifactId>
-                <version>${common-base.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.mockmall</groupId>
-                <artifactId>item-client</artifactId>
-                <version>${item-client.version}</version>
-            </dependency>
-
             <!--dubbo-->
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
@@ -65,10 +53,20 @@
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis-spring-boot-starter.version}</version>
             </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk-mybatis-spring-boot.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>com.mock.mall</groupId>
+            <artifactId>common-base</artifactId>
+            <version>${common-base.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
