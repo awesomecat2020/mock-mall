@@ -28,7 +28,6 @@
         <dubbo.version>3.0.8</dubbo.version>
         <curator-x-discovery.version>4.2.0</curator-x-discovery.version>
         <mybatis-spring-boot-starter.version>2.2.2</mybatis-spring-boot-starter.version>
-        <tk-mybatis-spring-boot.version>2.1.5</tk-mybatis-spring-boot.version>
     </properties>
 
     <dependencyManagement>

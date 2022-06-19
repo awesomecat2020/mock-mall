@@ -8,7 +8,7 @@ public interface CarouselMapper {
 
     /**
      * 新增
-     * 
+     *
      * @param row carousel
      * @return 影响条数
      * @author ccomma
@@ -17,7 +17,7 @@ public interface CarouselMapper {
 
     /**
      * 根据主键查询
-     * 
+     *
      * @param id 主键
      * @return carousel
      * @author ccomma
@@ -26,7 +26,7 @@ public interface CarouselMapper {
 
     /**
      * 查询全部
-     * 
+     *
      * @return {@code List<Carousel>}
      * @author ccomma
      */
@@ -34,10 +34,18 @@ public interface CarouselMapper {
 
     /**
      * 根据主键更新
-     * 
+     *
      * @param row carousel
      * @return 影响条数
      * @author ccomma
      */
     int updateByPrimaryKey(Carousel row);
+
+    /**
+     * 获取可展示的轮播图
+     *
+     * @return 轮播图列表
+     * @author ccomma
+     */
+    List<Carousel> selectByShow();
 }

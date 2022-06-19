@@ -11,7 +11,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     # mysql 驱动
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+    url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
     hikari:
@@ -31,16 +31,15 @@ spring:
       max-lifetime: 1800000
       connection-test-query: SELECT 1
 
-## mybatis
-#mybatis:
-#  # 实体类位置
-#  type-aliases-package: com.mockmall.item.pojo
-#  # 待解析 mapper.xml 位置
-#  mapper-locations: classpath:mapper/*.xml
-#  base-packages: com.mockmall.item.mapper
-#  configuration:
-#    # 开启驼峰式命名规则自动转换
-#    map-underscore-to-camel-case: true
+# mybatis
+mybatis:
+  # 实体类位置
+  type-aliases-package: com.mockmall.item.pojo
+  # 待解析 mapper.xml 位置
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    # 开启驼峰式命名规则自动转换
+    map-underscore-to-camel-case: true
 
 logging:
   level:

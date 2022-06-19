@@ -49,4 +49,11 @@
     is_valid, create_time, update_time
     from carousel
   </select>
+
+  <select id="selectByShow" resultMap="BaseResultMap">
+    select id, image_url, background_color, module_id, type, sort, is_show, version,
+           is_valid, create_time, update_time
+    from carousel
+    where is_show = 1;
+  </select>
 </mapper>
