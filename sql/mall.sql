@@ -11,7 +11,7 @@
  Target Server Version : 50710
  File Encoding         : 65001
 
- Date: 08/06/2022 00:20:36
+ Date: 19/06/2022 23:30:59
 */
 
 SET NAMES utf8mb4;
@@ -25,11 +25,10 @@ CREATE TABLE `carousel`  (
   `id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '主键',
   `image_url` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片地址',
   `background_color` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '背景色',
-  `item_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '商品id',
-  `cat_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '商品分类id',
-  `type` int(11) NOT NULL COMMENT '轮播图类型，用于判断，可以根据商品id或者分类进行页面跳转，1：商品 2：分类',
+  `module_id` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '模块id',
+  `type` int(5) NOT NULL COMMENT '轮播图类型 1：商品 2：分类',
   `sort` int(11) NOT NULL COMMENT '轮播图展示顺序',
-  `is_show` int(11) NOT NULL COMMENT '是否展示',
+  `is_show` tinyint(1) NOT NULL COMMENT '是否展示',
   `version` int(11) NOT NULL DEFAULT 0 COMMENT '版本号',
   `is_valid` tinyint(1) NOT NULL DEFAULT 1 COMMENT '是否有效',
   `create_time` datetime(0) NOT NULL COMMENT '创建时间',
@@ -40,10 +39,10 @@ CREATE TABLE `carousel`  (
 -- ----------------------------
 -- Records of carousel
 -- ----------------------------
-INSERT INTO `carousel` VALUES ('c-10011', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmG-ALsPRAAEX2Gk9FUg848.png', '#f44661', 'nut-1004', '', 1, 1, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
-INSERT INTO `carousel` VALUES ('c-10013', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmHiAWwR7AAFdqZHw8jU876.png', '#000240', '', '51', 2, 2, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
-INSERT INTO `carousel` VALUES ('c-10015', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmHuAPlXvAAFe-H5_-Nw961.png', '#ff9801', 'cake-1006', '', 1, 3, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
-INSERT INTO `carousel` VALUES ('c-10021', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmH6AeuRrAAEZviPhyQ0768.png', '#55be59', '', '133', 2, 4, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
+INSERT INTO `carousel` VALUES ('c-10011', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmG-ALsPRAAEX2Gk9FUg848.png', '#f44661', 'nut-1004', 1, 1, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
+INSERT INTO `carousel` VALUES ('c-10013', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmHiAWwR7AAFdqZHw8jU876.png', '#000240', '51', 2, 2, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
+INSERT INTO `carousel` VALUES ('c-10015', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmHuAPlXvAAFe-H5_-Nw961.png', '#ff9801', 'cake-1006', 1, 3, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
+INSERT INTO `carousel` VALUES ('c-10021', 'http://122.152.205.72:88/group1/M00/00/05/CpoxxF0ZmH6AeuRrAAEZviPhyQ0768.png', '#55be59', '133', 2, 4, 1, 0, 1, '2022-06-07 23:56:18', '2022-06-07 23:56:18');
 
 -- ----------------------------
 -- Table structure for category
