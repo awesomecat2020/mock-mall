@@ -5,7 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@EnableDubbo
+@EnableDubbo(scanBasePackages = "com.mockmall.item.client.service")
 @SpringBootApplication
 @MapperScan(basePackages = "com.mockmall.item.mapper")
 public class ItemProviderApplication {

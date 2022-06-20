@@ -5,6 +5,7 @@ import com.mockmall.item.client.bo.CarouselBO;
 import com.mockmall.item.client.service.CarouselClientService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -15,8 +16,9 @@ import java.util.List;
  * @author ccomma
  */
 @RestController
+@RequestMapping("/carousel/v1")
 public class CarouselController {
-    @DubboReference(check = false, loadbalance = "roundrobin")
+    @DubboReference(check = false, version = "1.0.0")
     private CarouselClientService carouselClientService;
 
     @GetMapping("/get_carousel_list_by_show")

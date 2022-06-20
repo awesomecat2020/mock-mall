@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 spring:
   application:
@@ -9,23 +9,20 @@ spring:
 dubbo:
   application:
     name: mall-front
+    qos-enable: true
+    qos-accept-foreign-ip: false
+    qos-port: 22221
   registry:
     address: zookeeper://127.0.0.1:2181
-    # 配置 namespace
-    parameters:
-      namespace: 88b66463-1685-40b3-ba9c-7b25e526dcfb
-    use-as-metadata-center: false
-    use-as-config-center: false
-    # 服务分组
-    group: demo
+    # 设置超时时间
+    timeout: 3000
   protocol:
     name: dubbo
-    port: 20880
+    port: 20881
   consumer:
-    # 关闭所有服务的启动时检查：(默认没有提供者时报错) 写在定义服务消费者一方
+    # 失败重试次数
+    retries: 3
     check: false
-#    # 失败重试次数
-#    retries: 3
 
 # log
 logging:
