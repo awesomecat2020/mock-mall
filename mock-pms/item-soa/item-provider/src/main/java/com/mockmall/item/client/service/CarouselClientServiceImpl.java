@@ -3,8 +3,8 @@ package com.mockmall.item.client.service;
 import com.mockmall.commonbase.result.GeneralResult;
 import com.mockmall.commonbase.result.Result;
 import com.mockmall.item.client.bo.CarouselBO;
-import com.mockmall.item.service.ICarouselService;
-import org.springframework.stereotype.Service;
+import com.mockmall.item.service.CarouselService;
+import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,11 +14,11 @@ import java.util.List;
  *
  * @author ccomma
  */
-@Service
-public class CarouselClientServiceImpl implements ICarouselClientService {
+@DubboService(version = "1.0.0")
+public class CarouselClientServiceImpl implements CarouselClientService {
 
     @Resource
-    private ICarouselService carouselService;
+    private CarouselService carouselService;
 
     @Override
     public Result<List<CarouselBO>> getCarouselListByShow() {

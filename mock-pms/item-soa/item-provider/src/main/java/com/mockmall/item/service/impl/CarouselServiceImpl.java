@@ -3,7 +3,7 @@ package com.mockmall.item.service.impl;
 import com.mockmall.item.client.bo.CarouselBO;
 import com.mockmall.item.mapper.CarouselMapper;
 import com.mockmall.item.pojo.Carousel;
-import com.mockmall.item.service.ICarouselService;
+import com.mockmall.item.service.CarouselService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
  * @author ccomma
  */
 @Service
-public class CarouselServiceImpl implements ICarouselService {
+public class CarouselServiceImpl implements CarouselService {
 
     @Resource
     private CarouselMapper carouselMapper;

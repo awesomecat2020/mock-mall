@@ -1,6 +1,6 @@
 package com.mockmall.item.service.impl;
 
-import com.mockmall.item.service.IItemService;
+import com.mockmall.item.service.ItemService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,6 +9,6 @@ import org.springframework.stereotype.Service;
  * @author ccomma
  */
 @Service
-public class ItemServiceImpl implements IItemService {
+public class ItemServiceImpl implements ItemService {
 
 }

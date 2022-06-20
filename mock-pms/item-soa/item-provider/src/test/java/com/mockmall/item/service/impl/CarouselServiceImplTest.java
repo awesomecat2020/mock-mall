@@ -2,7 +2,7 @@ package com.mockmall.item.service.impl;
 
 import com.mockmall.item.ItemProviderApplication;
 import com.mockmall.item.client.bo.CarouselBO;
-import com.mockmall.item.service.ICarouselService;
+import com.mockmall.item.service.CarouselService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +22,7 @@ import java.util.List;
 class CarouselServiceImplTest {
 
     @Resource
-    private ICarouselService carouselService;
+    private CarouselService carouselService;
 
     @Test
     void testListCarouselByShow() {

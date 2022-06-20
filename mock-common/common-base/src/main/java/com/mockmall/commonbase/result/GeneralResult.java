@@ -21,7 +21,7 @@ public class GeneralResult<T> implements Result<T> {
      * @return 成功
      * @author ccomma
      */
-    public static <T> GeneralResult<T> success() {
+    public static <T> Result<T> success() {
         GeneralResult<T> result = new GeneralResult<>();
         result.success = true;
         return result;
@@ -34,7 +34,7 @@ public class GeneralResult<T> implements Result<T> {
      * @return 成功
      * @author ccomma
      */
-    public static <T> GeneralResult<T> successWithData(T data) {
+    public static <T> Result<T> successWithData(T data) {
         GeneralResult<T> result = new GeneralResult<>();
         result.success = true;
         result.data = data;
@@ -48,7 +48,7 @@ public class GeneralResult<T> implements Result<T> {
      * @return 失败
      * @author ccomma
      */
-    public static <T> GeneralResult<T> failure(String message) {
+    public static <T> Result<T> failure(String message) {
         return failureWithCode(ResultCode.SYSTEM_DEFAULT.getCode(), message);
     }
 
@@ -60,7 +60,7 @@ public class GeneralResult<T> implements Result<T> {
      * @return 失败
      * @author ccomma
      */
-    public static <T> GeneralResult<T> failureWithCode(String code, String message) {
+    public static <T> Result<T> failureWithCode(String code, String message) {
         GeneralResult<T> result = new GeneralResult<>();
         result.success = false;
         result.code = code;
@@ -77,7 +77,7 @@ public class GeneralResult<T> implements Result<T> {
      * @return 失败
      * @author ccomma
      */
-    public static <T> GeneralResult<T> failureWithData(T data, String code, String message) {
+    public static <T> Result<T> failureWithData(T data, String code, String message) {
         GeneralResult<T> result = new GeneralResult<>();
         result.success = false;
         result.code = code;

@@ -1,20 +1,23 @@
-package com.mockmall.item.service;
+package com.mockmall.item.client.service;
 
+import com.mockmall.commonbase.result.Result;
 import com.mockmall.item.client.bo.CarouselBO;
 
 import java.util.List;
 
 /**
- * CarouselService
+ * Carousel
  *
  * @author ccomma
  */
-public interface ICarouselService {
+public interface CarouselClientService {
+
     /**
      * 获取可展示的轮播图
      *
      * @return 轮播图列表
      * @author ccomma
      */
-    List<CarouselBO> listCarouselByShow();
+    Result<List<CarouselBO>> getCarouselListByShow();
+
 }

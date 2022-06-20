@@ -1,10 +1,12 @@
 server:
-  port: 8080
+  port: 8081
   tomcat:
     uri-encoding: UTF-8
   max-http-header-size: 80KB
 
 spring:
+  application:
+    name: item-provider
   # 数据源的相关配置
   datasource:
     # 数据源类型：HikariCP
@@ -31,6 +33,30 @@ spring:
       max-lifetime: 1800000
       connection-test-query: SELECT 1
 
+# dubbo
+dubbo:
+  application:
+    name: item
+#    # 禁用QOS同一台机器可能会有端口冲突现象
+#    qos-enable: false
+#    qos-accept-foreign-ip: false
+#  scan:
+#    # 扫描rpc接口定义包
+#    base-packages: com.mockmall.item.client.service
+  registry:
+    protocol: dubbo
+    address: zookeeper://127.0.0.1:2181
+    # 设置超时时间
+    timeout: 3000
+    # 配置 namespace
+    parameters:
+      namespace: 88b66463-1685-40b3-ba9c-7b25e526dcfb
+      # 服务分组
+    group: item
+  protocol:
+    name: dubbo
+    port: 20880
+
 # mybatis
 mybatis:
   # 实体类位置
@@ -41,6 +67,7 @@ mybatis:
     # 开启驼峰式命名规则自动转换
     map-underscore-to-camel-case: true
 
+# log
 logging:
   level:
     com.mockmall.item: DEBUG

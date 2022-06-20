@@ -5,5 +5,5 @@ package com.mockmall.item.client.service;
  *
  * @author ccomma
  */
-public interface IItemClientService {
+public interface ItemClientService {
 }

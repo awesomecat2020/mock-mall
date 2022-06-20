@@ -1,10 +1,10 @@
 package com.mockmall.item.client.service;
 
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * @author ccomma
  */
-@Service
-public class ItemClientServiceImpl implements IItemClientService {
+@DubboService(version = "1.0.0")
+public class ItemClientServiceImpl implements ItemClientService {
 }
