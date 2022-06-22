@@ -34,7 +34,6 @@
       sort = #{sort,jdbcType=INTEGER},
       is_show = #{isShow,jdbcType=BIT},
       version = #{version,jdbcType=INTEGER},
-      is_valid = #{isValid,jdbcType=BIT},
       update_time = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>

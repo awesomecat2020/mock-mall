@@ -33,7 +33,6 @@
       sell_counts = #{sellCounts,jdbcType=INTEGER},
       on_off_status = #{onOffStatus,jdbcType=INTEGER},
       version = #{version,jdbcType=INTEGER},
-      is_valid = #{isValid,jdbcType=BIT},
       update_time = now(),
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=VARCHAR}

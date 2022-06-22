@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.item.mapper.CategoryMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.Category">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="parent_id" jdbcType="VARCHAR" property="parentId" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="slogan" jdbcType="VARCHAR" property="slogan" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="bg_color" jdbcType="VARCHAR" property="bgColor" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.Category">
+    insert into category (id, name, type, 
+      parent_id, logo, slogan, 
+      image, bg_color, version,
+      is_valid, create_time, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, 
+      #{parentId,jdbcType=VARCHAR}, #{logo,jdbcType=VARCHAR}, #{slogan,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{bgColor,jdbcType=VARCHAR}, 0,
+      1, now(), now()
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.Category">
+    update category
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      slogan = #{slogan,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      bg_color = #{bgColor,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      update_time = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, name, type, parent_id, logo, slogan, image, bg_color, version, is_valid,
+    create_time, update_time
+    from category
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, type, parent_id, logo, slogan, image, bg_color, version, is_valid,
+    create_time, update_time
+    from category
+  </select>
+
+  <select id="selectByTop" resultMap="BaseResultMap">
+    select id, name, type, parent_id, logo, slogan, image, bg_color, version, is_valid,
+           create_time, update_time
+    from category
+    where parent_id = 0
+  </select>
+</mapper>
