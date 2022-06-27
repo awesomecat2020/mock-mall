@@ -7,6 +7,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -15,10 +16,10 @@ import java.util.List;
  *
  * @author ccomma
  */
+@RestController
 @RequestMapping("/category/v1")
-@Controller
 public class CategoryController {
-    @DubboReference
+    @DubboReference(check = false, version = "1.0.0")
     private CategoryClientService categoryClientService;
 
     @GetMapping("/get_category_list_by_top")
