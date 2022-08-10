@@ -8,14 +8,18 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.mock.mall</groupId>
+
+	<groupId>com.mockmall</groupId>
 	<artifactId>common-utils</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>common-utils</name>
 	<description>common-utils</description>
+
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

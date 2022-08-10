@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.mock.mall</groupId>
+    <groupId>com.mockmall</groupId>
     <artifactId>item-soa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
@@ -67,7 +67,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.mock.mall</groupId>
+            <groupId>com.mockmall</groupId>
             <artifactId>common-base</artifactId>
             <version>${common-base.version}</version>
         </dependency>
@@ -76,7 +76,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-
     </dependencies>
 
     <build>

@@ -21,15 +21,30 @@
 		<dubbo-spring-boot-starter.version>3.0.8</dubbo-spring-boot-starter.version>
 		<curator-x-discovery.version>5.2.1</curator-x-discovery.version>
 	</properties>
+
 	<dependencies>
+		<!-- client -->
 		<dependency>
 			<groupId>com.mockmall</groupId>
 			<artifactId>item-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<!-- spring -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 
 		<!--dubbo-->
@@ -46,23 +61,10 @@
 			<version>${curator-x-discovery.version}</version>
 		</dependency>
 
-		<!--热部署插件-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
