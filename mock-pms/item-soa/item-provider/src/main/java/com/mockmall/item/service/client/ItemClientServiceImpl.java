@@ -1,5 +1,6 @@
-package com.mockmall.item.client.service;
+package com.mockmall.item.service.client;
 
+import com.mockmall.item.client.service.ItemClientService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 /**
