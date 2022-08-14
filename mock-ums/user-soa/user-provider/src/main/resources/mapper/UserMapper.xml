@@ -57,4 +57,11 @@
     version, is_valid, create_time, update_time
     from user
   </select>
+
+  <select id="selectExistByUserName" resultType="java.lang.Integer">
+    select 1
+    from user
+    where username = #{userName}
+    limit 1
+  </select>
 </mapper>

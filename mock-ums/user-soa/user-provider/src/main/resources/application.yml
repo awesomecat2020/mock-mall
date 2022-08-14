@@ -52,7 +52,7 @@ dubbo:
     # 关闭配置中心
 #    use-as-config-center: false
     # 服务分组
-#    group: item
+#    group: user
   protocol:
     name: dubbo
     port: 20883
@@ -78,4 +78,4 @@ mybatis:
 # log
 logging:
   level:
-    com.mockmall.item: DEBUG
+    com.mockmall.user: DEBUG

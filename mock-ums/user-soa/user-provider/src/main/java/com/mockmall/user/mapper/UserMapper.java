@@ -38,4 +38,13 @@ public interface UserMapper {
      * @author ccomma
      */
     int updateByPrimaryKey(User row);
+
+    /**
+     * 是否存在用户名为 userName 的数据
+     *
+     * @param userName 用户名
+     * @return 1：存在；0：不存在
+     * @author ccomma
+     */
+    Integer selectExistByUserName(String userName);
 }
