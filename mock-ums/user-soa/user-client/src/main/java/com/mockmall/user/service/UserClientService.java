@@ -1,14 +1,14 @@
 package com.mockmall.user.service;
 
+import com.mockmall.commonbase.result.Result;
 import com.mockmall.user.bo.UserBO;
-import com.mockmall.user.pojo.User;
 
 /**
- * User Service
+ * UserClient
  *
  * @author ccomma
  */
-public interface UserService {
+public interface UserClientService {
 
     /**
      * 判断用户名是否存在
@@ -17,14 +17,15 @@ public interface UserService {
      * @return 是否存在
      * @author ccomma
      */
-    boolean existByUserName(String userName);
+    Result<Boolean> existByUserName(String userName);
 
     /**
-     * 保存用户
+     * 保存
      *
      * @param userBO user
      * @return 保存成功的 user
      * @author ccomma
      */
-    UserBO save(UserBO userBO);
+    Result<UserBO> save(UserBO userBO);
+
 }

@@ -1,4 +1,4 @@
-package com.mockmall.item.client.service;
+package com.mockmall.item.service;
 
 /**
  * IItemClientService

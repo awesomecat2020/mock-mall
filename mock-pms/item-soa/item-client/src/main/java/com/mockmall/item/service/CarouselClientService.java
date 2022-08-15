@@ -1,7 +1,7 @@
-package com.mockmall.item.client.service;
+package com.mockmall.item.service;
 
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.item.client.bo.CarouselBO;
+import com.mockmall.item.bo.CarouselBO;
 
 import java.util.List;
 

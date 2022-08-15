@@ -1,6 +1,6 @@
 package com.mockmall.item.service;
 
-import com.mockmall.item.client.bo.CategoryBO;
+import com.mockmall.item.bo.CategoryBO;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ public enum ResultCode {
     /**
      * 服务端异常
      */
-    SYSTEM_DEFAULT("SYSTEM_DEFAULT_ERROR", "服务端异常"),
+    SYSTEM_DEFAULT("SYSTEM_DEFAULT_ERROR_1000", "服务端异常"),
 
     /**
      * 系统异常

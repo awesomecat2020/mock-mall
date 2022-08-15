@@ -1,6 +1,6 @@
 package com.mockmall.item.service.impl;
 
-import com.mockmall.item.client.bo.CategoryBO;
+import com.mockmall.item.bo.CategoryBO;
 import com.mockmall.item.mapper.CategoryMapper;
 import com.mockmall.item.pojo.Category;
 import com.mockmall.item.service.CategoryService;

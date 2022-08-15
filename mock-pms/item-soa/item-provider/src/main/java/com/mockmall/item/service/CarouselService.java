@@ -1,6 +1,6 @@
 package com.mockmall.item.service;
 
-import com.mockmall.item.client.bo.CarouselBO;
+import com.mockmall.item.bo.CarouselBO;
 
 import java.util.List;
 

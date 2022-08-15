@@ -1,6 +1,6 @@
 package com.mockmall.item.service.impl;
 
-import com.mockmall.item.client.bo.CarouselBO;
+import com.mockmall.item.bo.CarouselBO;
 import com.mockmall.item.mapper.CarouselMapper;
 import com.mockmall.item.pojo.Carousel;
 import com.mockmall.item.service.CarouselService;

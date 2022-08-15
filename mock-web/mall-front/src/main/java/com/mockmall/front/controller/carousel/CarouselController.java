@@ -1,8 +1,8 @@
 package com.mockmall.front.controller.carousel;
 
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.item.client.bo.CarouselBO;
-import com.mockmall.item.client.service.CarouselClientService;
+import com.mockmall.item.bo.CarouselBO;
+import com.mockmall.item.service.CarouselClientService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

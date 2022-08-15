@@ -9,7 +9,6 @@ public class GeneralResult<T> implements Result<T> {
 
     private static final long serialVersionUID = 5354152983242818570L;
 
-
     private Boolean success;
     private String code;
     private String message;

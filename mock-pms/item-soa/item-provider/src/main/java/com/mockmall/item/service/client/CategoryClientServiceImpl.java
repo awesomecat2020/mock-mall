@@ -2,8 +2,8 @@ package com.mockmall.item.service.client;
 
 import com.mockmall.commonbase.result.GeneralResult;
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.item.client.bo.CategoryBO;
-import com.mockmall.item.client.service.CategoryClientService;
+import com.mockmall.item.bo.CategoryBO;
+import com.mockmall.item.service.CategoryClientService;
 import com.mockmall.item.service.CategoryService;
 import org.apache.dubbo.config.annotation.DubboService;
 

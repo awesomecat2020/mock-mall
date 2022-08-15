@@ -1,8 +1,6 @@
-package com.mockmall.item.client.bo;
+package com.mockmall.item.bo;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -11,9 +9,7 @@ import java.io.Serializable;
  *
  * @author ccomma
  */
-@Setter
-@Getter
-@ToString
+@Data
 public class CarouselBO implements Serializable {
     private static final long serialVersionUID = 9032819177860709655L;
 

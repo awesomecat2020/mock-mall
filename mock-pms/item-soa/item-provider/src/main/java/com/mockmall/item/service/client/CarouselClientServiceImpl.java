@@ -2,8 +2,8 @@ package com.mockmall.item.service.client;
 
 import com.mockmall.commonbase.result.GeneralResult;
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.item.client.bo.CarouselBO;
-import com.mockmall.item.client.service.CarouselClientService;
+import com.mockmall.item.bo.CarouselBO;
+import com.mockmall.item.service.CarouselClientService;
 import com.mockmall.item.service.CarouselService;
 import org.apache.dubbo.config.annotation.DubboService;
 

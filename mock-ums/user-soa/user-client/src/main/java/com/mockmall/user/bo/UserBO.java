@@ -1,25 +1,19 @@
-package com.mockmall.user.pojo;
+package com.mockmall.user.bo;
 
-import com.mockmall.commonbase.base.BasePO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
- * User
- * 
- * @author ccomma
+ * UserBO
+ *
+ * @author mianxian
+ * 2022/8/15 13:10
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class User extends BasePO {
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * 主键
-     */
-    private String id;
+public class UserBO implements Serializable {
+    private static final long serialVersionUID = 8762719038291996165L;
 
     /**
      * 用户名

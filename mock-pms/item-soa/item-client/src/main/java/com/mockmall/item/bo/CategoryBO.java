@@ -1,8 +1,6 @@
-package com.mockmall.item.client.bo;
+package com.mockmall.item.bo;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -12,9 +10,7 @@ import java.io.Serializable;
  * @author ccomma
  * 2022/6/21 14:39
  */
-@Setter
-@Getter
-@ToString
+@Data
 public class CategoryBO implements Serializable {
     private static final long serialVersionUID = 8340273392065422757L;
 

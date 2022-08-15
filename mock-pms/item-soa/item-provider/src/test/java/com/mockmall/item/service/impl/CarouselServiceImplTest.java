@@ -1,7 +1,7 @@
 package com.mockmall.item.service.impl;
 
 import com.mockmall.item.ItemProviderApplication;
-import com.mockmall.item.client.bo.CarouselBO;
+import com.mockmall.item.bo.CarouselBO;
 import com.mockmall.item.service.CarouselService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
