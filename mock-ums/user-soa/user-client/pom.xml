@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>user-client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${user-client.version}</version>
 
     <name>user-client</name>
     <description>user-client</description>

@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 
 
 /**
@@ -28,7 +30,7 @@ class UserServiceImplTest {
     }
 
     @Test
-    void save() {
+    void save() throws NoSuchAlgorithmException, ParseException {
         UserBO userBO = new UserBO();
         userService.save(userBO);
     }

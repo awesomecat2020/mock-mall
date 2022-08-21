@@ -8,6 +8,8 @@ import com.mockmall.user.service.UserService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 
 /**
  * User Client Service
@@ -27,6 +29,12 @@ public class UserClientServiceImpl implements UserClientService {
 
     @Override
     public Result<UserBO> save(UserBO userBO) {
-        return GeneralResult.successWithData(userService.save(userBO));
+        try {
+            return GeneralResult.successWithData(userService.save(userBO));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

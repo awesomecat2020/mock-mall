@@ -1,6 +1,7 @@
 package com.mockmall.user.pojo;
 
 import com.mockmall.commonbase.base.BasePO;
+import com.mockmall.user.enums.SexEnum;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -57,7 +58,8 @@ public class User extends BasePO {
     private String email;
 
     /**
-     * 性别 1:男  0:女  2:保密
+     * 性别
+     * @see SexEnum
      */
     private Integer sex;
 
@@ -66,8 +68,4 @@ public class User extends BasePO {
      */
     private Date birthday;
 
-    /**
-     * 是否有效
-     */
-    private Boolean isValid;
 }

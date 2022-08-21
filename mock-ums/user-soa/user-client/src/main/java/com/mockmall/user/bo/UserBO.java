@@ -60,8 +60,4 @@ public class UserBO implements Serializable {
      */
     private Date birthday;
 
-    /**
-     * 是否有效
-     */
-    private Boolean isValid;
 }

@@ -26,8 +26,8 @@
     values (#{id,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{nickname,jdbcType=VARCHAR}, #{realname,jdbcType=VARCHAR}, #{face,jdbcType=VARCHAR}, 
       #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{sex,jdbcType=INTEGER}, 
-      #{birthday,jdbcType=DATE}, #{version,jdbcType=INTEGER}, #{isValid,jdbcType=BIT}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+      #{birthday,jdbcType=DATE}, 0, 1,
+      now(), now())
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.mockmall.user.pojo.User">
     update user
@@ -41,9 +41,7 @@
       sex = #{sex,jdbcType=INTEGER},
       birthday = #{birthday,jdbcType=DATE},
       version = #{version,jdbcType=INTEGER},
-      is_valid = #{isValid,jdbcType=BIT},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">

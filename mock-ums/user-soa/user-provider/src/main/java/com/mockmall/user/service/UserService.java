@@ -1,7 +1,9 @@
 package com.mockmall.user.service;
 
 import com.mockmall.user.bo.UserBO;
-import com.mockmall.user.pojo.User;
+
+import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
 
 /**
  * User Service
@@ -26,5 +28,5 @@ public interface UserService {
      * @return 保存成功的 user
      * @author ccomma
      */
-    UserBO save(UserBO userBO);
+    UserBO save(UserBO userBO) throws NoSuchAlgorithmException, ParseException;
 }

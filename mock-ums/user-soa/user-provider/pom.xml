@@ -17,7 +17,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <user-client.version>0.0.1-SNAPSHOT</user-client.version>
     </properties>
 
     <dependencies>
@@ -27,6 +26,7 @@
             <artifactId>user-client</artifactId>
             <version>${user-client.version}</version>
         </dependency>
+
         <!-- spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -81,6 +81,15 @@
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
             <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
         </dependency>
     </dependencies>
 
