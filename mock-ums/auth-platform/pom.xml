@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<groupId>com.mockmall</groupId>
+	<artifactId>auth-platform</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>auth-platform</name>
+	<description>auth-platform</description>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>auth-platform-client</module>
+		<module>auth-platform-provider</module>
+	</modules>
+
+	<properties>
+		<auth-platform-client.version>0.0.1-SNAPSHOT</auth-platform-client.version>
+		<java.version>1.8</java.version>
+		<common-base.version>0.0.1-SNAPSHOT</common-base.version>
+		<dubbo.version>3.0.8</dubbo.version>
+		<curator-x-discovery.version>5.2.1</curator-x-discovery.version>
+		<mybatis-spring-boot-starter.version>2.2.2</mybatis-spring-boot-starter.version>
+		<commons-lang3.version>3.5</commons-lang3.version>
+		<user-client.version>0.0.1-SNAPSHOT</user-client.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!--dubbo-->
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-spring-boot-starter</artifactId>
+				<version>${dubbo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-qos</artifactId>
+				<version>${dubbo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.dubbo</groupId>
+				<artifactId>dubbo-registry-nacos</artifactId>
+				<version>${dubbo.version}</version>
+			</dependency>
+
+			<!-- curator -->
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-x-discovery</artifactId>
+				<version>${curator-x-discovery.version}</version>
+			</dependency>
+
+			<!--mybatis-->
+			<dependency>
+				<groupId>org.mybatis.spring.boot</groupId>
+				<artifactId>mybatis-spring-boot-starter</artifactId>
+				<version>${mybatis-spring-boot-starter.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.mockmall</groupId>
+			<artifactId>common-base</artifactId>
+			<version>${common-base.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

@@ -4,6 +4,7 @@ import com.mockmall.user.pojo.User;
 import java.util.List;
 
 public interface UserMapper {
+
     /**
      * 新增
      * 
@@ -40,11 +41,11 @@ public interface UserMapper {
     int updateByPrimaryKey(User row);
 
     /**
-     * 是否存在用户名为 userName 的数据
+     * 是否存在手机号为 mobile 的用户
      *
-     * @param userName 用户名
+     * @param mobile 手机号
      * @return 1：存在；0：不存在
      * @author ccomma
      */
-    Integer selectExistByUserName(String userName);
+    Integer selectExistByMobile(String mobile);
 }

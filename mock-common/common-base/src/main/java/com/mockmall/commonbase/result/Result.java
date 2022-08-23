@@ -73,5 +73,4 @@ public interface Result<T> extends Serializable {
      */
     void setData(T data);
 
-
 }

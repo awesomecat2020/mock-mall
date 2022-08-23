@@ -13,13 +13,13 @@ import java.text.ParseException;
 public interface UserService {
 
     /**
-     * 判断用户名是否存在
+     * 判断用户是否存在
      *
-     * @param userName 用户名
+     * @param mobile 手机号
      * @return 是否存在
      * @author ccomma
      */
-    boolean existByUserName(String userName);
+    boolean existByMobile(String mobile);
 
     /**
      * 保存用户

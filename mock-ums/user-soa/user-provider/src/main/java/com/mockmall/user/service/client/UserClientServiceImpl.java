@@ -23,8 +23,8 @@ public class UserClientServiceImpl implements UserClientService {
     private UserService userService;
 
     @Override
-    public Result<Boolean> existByUserName(String userName) {
-        return GeneralResult.successWithData(userService.existByUserName(userName));
+    public Result<Boolean> existByMobile(String mobile) {
+        return GeneralResult.successWithData(userService.existByMobile(mobile));
     }
 
     @Override

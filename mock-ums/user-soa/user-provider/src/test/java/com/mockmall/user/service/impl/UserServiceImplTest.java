@@ -25,7 +25,7 @@ class UserServiceImplTest {
 
     @Test
     void testExistByUserName() {
-        boolean exist = userService.existByUserName("test");
+        boolean exist = userService.existByMobile("test");
         Assert.assertTrue(exist);
     }
 

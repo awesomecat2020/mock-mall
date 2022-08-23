@@ -13,12 +13,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
-import javax.xml.crypto.Data;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -37,8 +34,8 @@ public class UserServiceImpl implements UserService {
 
     @Transactional(propagation = Propagation.SUPPORTS, rollbackFor = Exception.class)
     @Override
-    public boolean existByUserName(String userName) {
-        return userMapper.selectExistByUserName(userName) != null;
+    public boolean existByMobile(String mobile) {
+        return userMapper.selectExistByMobile(mobile) != null;
     }
 
     @Override

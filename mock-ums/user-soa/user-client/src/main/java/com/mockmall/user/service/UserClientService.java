@@ -11,13 +11,13 @@ import com.mockmall.user.bo.UserBO;
 public interface UserClientService {
 
     /**
-     * 判断用户名是否存在
+     * 判断用户是否存在
      *
-     * @param userName 用户名
+     * @param mobile 手机号
      * @return 是否存在
      * @author ccomma
      */
-    Result<Boolean> existByUserName(String userName);
+    Result<Boolean> existByMobile(String mobile);
 
     /**
      * 保存

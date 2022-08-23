@@ -1,11 +1,11 @@
 package com.mockmall.commonbase.exception;
 
 /**
- * 服务异常
+ * 业务异常
  *
  * @author ccomma
  */
-public class ServiceException extends RuntimeException {
+public class BizException extends RuntimeException {
 
     private static final long serialVersionUID = -1795382745743646528L;
 
@@ -14,7 +14,7 @@ public class ServiceException extends RuntimeException {
      */
     private final String code;
 
-    public ServiceException() {
+    public BizException() {
         super();
         code = null;
     }
@@ -26,7 +26,7 @@ public class ServiceException extends RuntimeException {
      * @param message 异常信息.
      * @param cause   原生异常.
      */
-    public ServiceException(final String code, final String message, final Throwable cause) {
+    public BizException(final String code, final String message, final Throwable cause) {
         super(message, cause);
         this.code = code;
     }
@@ -37,7 +37,7 @@ public class ServiceException extends RuntimeException {
      * @param message 异常信息.
      * @param cause   原生异常.
      */
-    public ServiceException(final String message, final Throwable cause) {
+    public BizException(final String message, final Throwable cause) {
         super(message, cause);
         code = null;
     }
@@ -47,7 +47,7 @@ public class ServiceException extends RuntimeException {
      *
      * @param cause 原生异常.
      */
-    public ServiceException(final Throwable cause) {
+    public BizException(final Throwable cause) {
         super(cause);
         code = null;
     }
@@ -57,7 +57,7 @@ public class ServiceException extends RuntimeException {
      *
      * @param message 异常信息.
      */
-    public ServiceException(final String message) {
+    public BizException(final String message) {
         super(message);
         code = null;
     }
@@ -69,7 +69,7 @@ public class ServiceException extends RuntimeException {
      * @param message 异常信息
      * @author zxh 槟榔
      */
-    public ServiceException(final String code, final String message) {
+    public BizException(final String code, final String message) {
         super(message);
         this.code = code;
     }

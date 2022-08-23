@@ -56,10 +56,10 @@
     from user
   </select>
 
-  <select id="selectExistByUserName" resultType="java.lang.Integer">
+  <select id="selectExistByMobile" resultType="java.lang.Integer">
     select 1
     from user
-    where username = #{userName}
+    where mobile = #{mobile}
     limit 1
   </select>
 </mapper>
