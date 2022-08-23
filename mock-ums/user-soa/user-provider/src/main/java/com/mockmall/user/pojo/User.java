@@ -15,6 +15,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class User extends BasePO {
+
     private static final long serialVersionUID = 1L;
 
     /**

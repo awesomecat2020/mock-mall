@@ -3,9 +3,6 @@ package com.mockmall.authplatform.service.impl;
 import com.mockmall.authplatform.bo.VerCodeResultBO;
 import com.mockmall.authplatform.service.AuthService;
 import com.mockmall.authplatform.service.SmsInService;
-import com.mockmall.commonbase.exception.ServiceException;
-import com.mockmall.commonbase.result.Result;
-import com.mockmall.commonbase.utils.ResultUtil;
 import com.mockmall.user.service.UserClientService;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
@@ -30,22 +27,13 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public VerCodeResultBO sendVerCode(String mobile) {
-        // 校验手机号
+        // 1.校验手机号
         smsInService.checkMobileByPattern(mobile, CHINA_MOBILE_REGEX);
-        Result<Boolean> result = userClientService.existByMobile(mobile);
-        if (ResultUtil.hasNotData(result)) {
-            // TODO: 2022/8/23 user服务异常
-            throw new ServiceException();
-        }
 
         // 发送验证码
         smsInService.sendVerCode(mobile);
 
-        // 返回
-        VerCodeResultBO verCodeResult = new VerCodeResultBO();
-        verCodeResult.setRegister(result.getData());
-        verCodeResult.setMemberId("");
-        verCodeResult.setStatus(true);
-        return verCodeResult;
+        return null;
     }
+
 }

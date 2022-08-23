@@ -21,6 +21,8 @@
         <dubbo-spring-boot-starter.version>3.0.8</dubbo-spring-boot-starter.version>
         <curator-x-discovery.version>5.2.1</curator-x-discovery.version>
         <commons-lang3.version>3.5</commons-lang3.version>
+        <item-client.version>0.0.1-SNAPSHOT</item-client.version>
+        <auth-platform.version>0.0.1-SNAPSHOT</auth-platform.version>
     </properties>
 
     <dependencies>
@@ -28,7 +30,12 @@
         <dependency>
             <groupId>com.mockmall</groupId>
             <artifactId>item-client</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${item-client.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mockmall</groupId>
+            <artifactId>auth-platform-client</artifactId>
+            <version>${auth-platform.version}</version>
         </dependency>
 
         <!-- spring -->

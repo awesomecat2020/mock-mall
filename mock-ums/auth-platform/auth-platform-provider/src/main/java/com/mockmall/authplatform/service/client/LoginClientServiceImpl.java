@@ -19,7 +19,7 @@ public class LoginClientServiceImpl implements LoginClientService {
     private AuthService authService;
 
     @Override
-    public Result<VerCodeResultBO> sendVerCode(String mobile, int isRequireRegister, int type, String specialTag, String specialParam) {
+    public Result<VerCodeResultBO> sendVerCode(String mobile) {
         VerCodeResultBO verCodeResult = authService.sendVerCode(mobile);
         return GeneralResult.successWithData(verCodeResult);
     }

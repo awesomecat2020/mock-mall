@@ -13,14 +13,12 @@ public interface LoginClientService {
     /**
      * 发送验证码
      *
-     * @param mobile
-     * @param isRequireRegister
-     * @param type
-     * @param specialTag
-     * @param specialParam
+     * @param mobile 手机号
      * @return {@code Result<VerCodeResultVo>}
      * @author ccomma
      */
-    Result<VerCodeResultBO> sendVerCode(String mobile, int isRequireRegister, int type, String specialTag, String specialParam);
+    Result<VerCodeResultBO> sendVerCode(String mobile);
+
+
 
 }

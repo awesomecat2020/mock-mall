@@ -1,10 +1,12 @@
 package com.mockmall.front.controller.auth;
 
+import com.mockmall.authplatform.bo.VerCodeResultBO;
+import com.mockmall.authplatform.service.LoginClientService;
 import com.mockmall.commonbase.result.Result;
 import com.mockmall.front.service.sms.SmsInService;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.apache.dubbo.config.annotation.DubboReference;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -22,10 +24,12 @@ public class AuthController {
     @Resource
     private SmsInService smsInService;
 
+    @DubboReference(version = "1.0.0")
+    private LoginClientService loginClientService;
 
 
-    @RequestMapping(value = "/v1/send_ver_code", method = {RequestMethod.GET, RequestMethod.POST})
-    public Result sendVerCode(String mobile, int isRequireRegister, int type, String specialTag, String specialParam) {
+    @PostMapping("/v1/send_ver_code")
+    public Result<VerCodeResultBO> sendVerCode(String mobile) {
 
         // 校验手机号，校验失败抛出异常
         if (StringUtils.isNotBlank(mobile)) {
@@ -34,6 +38,13 @@ public class AuthController {
 
         smsInService.checkMobileByPattern(mobile, CHINA_MOBILE_REGEX);
 
-        return unifiedLoginClientService.sendVerCode(mobile, isRequireRegister, type, specialTag, specialParam);
+        return loginClientService.sendVerCode(mobile);
     }
+
+    @PostMapping("/v1/register")
+    public Result register(String mobile) {
+
+        return null;
+    }
+
 }
