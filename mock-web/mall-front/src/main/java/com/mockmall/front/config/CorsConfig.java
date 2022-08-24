@@ -18,7 +18,7 @@ public class CorsConfig {
     public CorsFilter corsFilter() {
         // 1.cors 配置
         CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("http://localhost:8080");
+        corsConfiguration.addAllowedOrigin("http://localhost:8081");
         // cookie
         corsConfiguration.setAllowCredentials(true);
         // get/post
