@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableDubbo
 @SpringBootApplication
-public class MockFrontApplication {
+public class MiniFrontApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MockFrontApplication.class, args);

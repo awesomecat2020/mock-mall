@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>mall-front</module>
+        <module>mini-front</module>
     </modules>
 
     <properties>

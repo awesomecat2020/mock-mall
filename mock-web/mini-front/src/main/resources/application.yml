@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: mall-front
+    name: mini-front
 
 # dubbo
 dubbo:
   application:
-    name: mall-front
+    name: mini-front
     qos-enable: true
     qos-accept-foreign-ip: false
     qos-port: 22221
