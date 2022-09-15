@@ -1,4 +1,4 @@
-package com.mockmall.front.service.sms;
+package com.mockmall.minifront.service.sms;
 
 
 /**

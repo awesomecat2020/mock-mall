@@ -1,9 +1,9 @@
-package com.mockmall.front.controller.auth;
+package com.mockmall.minifront.controller.auth;
 
 import com.mockmall.authplatform.bo.VerCodeResultBO;
 import com.mockmall.authplatform.service.LoginClientService;
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.front.service.sms.SmsInService;
+import com.mockmall.minifront.service.sms.SmsInService;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.PostMapping;

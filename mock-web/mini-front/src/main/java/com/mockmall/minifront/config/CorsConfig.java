@@ -1,4 +1,4 @@
-package com.mockmall.front.config;
+package com.mockmall.minifront.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

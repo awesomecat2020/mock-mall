@@ -1,4 +1,4 @@
-package com.mockmall.front.controller.category;
+package com.mockmall.minifront.controller.category;
 
 import com.mockmall.commonbase.result.Result;
 import com.mockmall.item.bo.CategoryBO;

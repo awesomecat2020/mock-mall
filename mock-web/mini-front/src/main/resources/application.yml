@@ -27,4 +27,4 @@ dubbo:
 # log
 logging:
   level:
-    com.mockmall.front: DEBUG
+    com.mockmall.minifront: DEBUG

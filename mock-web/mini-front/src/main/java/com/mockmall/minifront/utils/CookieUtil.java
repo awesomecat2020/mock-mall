@@ -1,4 +1,4 @@
-package com.mockmall.front.utils;
+package com.mockmall.minifront.utils;
 
 /**
  * @author ccomma
