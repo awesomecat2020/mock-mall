@@ -19,6 +19,4 @@ public interface LoginClientService {
      */
     Result<VerCodeResultBO> sendVerCode(String mobile);
 
-
-
 }

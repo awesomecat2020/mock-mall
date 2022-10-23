@@ -47,4 +47,10 @@ public class AuthController {
         return null;
     }
 
+    @PostMapping("/v1/login")
+    public Result login(String mobile) {
+
+        return null;
+    }
+
 }

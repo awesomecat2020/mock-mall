@@ -28,3 +28,4 @@ dubbo:
 logging:
   level:
     com.mockmall.minifront: DEBUG
+  config: classpath:log4j2.yml

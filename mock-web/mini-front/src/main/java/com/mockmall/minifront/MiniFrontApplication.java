@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MiniFrontApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MockFrontApplication.class, args);
+		SpringApplication.run(MiniFrontApplication.class, args);
 	}
 
 }

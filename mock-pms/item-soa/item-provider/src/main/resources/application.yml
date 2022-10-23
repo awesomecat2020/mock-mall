@@ -78,3 +78,4 @@ mybatis:
 logging:
   level:
     com.mockmall.item: DEBUG
+  config: classpath:log4j2.yml
