@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: mini-front
+  mvc:
+    servlet:
+      path: /mini-front
 
 # dubbo
 dubbo:

@@ -34,12 +34,11 @@ spring:
 dubbo:
   application:
     name: item-provider
-    logger: slf4j
+#    logger: slf4j
     qos-enable: true
     qos-port: 22222
     qos-accept-foreign-ip: false
   registry:
-    protocol: zookeeper
     address: zookeeper://127.0.0.1:2181
     # 设置超时时间
     timeout: 3000
@@ -55,14 +54,12 @@ dubbo:
   protocol:
     name: dubbo
     port: 20882
-    threads: 500
-    dispatcher: all
-    threadpool: fixed
-#  metadata-report:
-#    # 关闭元数据通道
-#    cycle-report: false
+#    threads: 500
+#    dispatcher: all
+#    threadpool: fixed
   consumer:
     retries: 3
+    check: false
 
 # mybatis
 mybatis:
