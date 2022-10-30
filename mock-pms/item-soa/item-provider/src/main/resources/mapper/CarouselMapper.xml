@@ -8,9 +8,9 @@
     <result column="module_id" jdbcType="VARCHAR" property="moduleId" />
     <result column="type" jdbcType="INTEGER" property="type" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
-    <result column="is_show" jdbcType="BIT" property="isShow" />
+    <result column="show" jdbcType="BIT" property="show" />
     <result column="version" jdbcType="INTEGER" property="version" />
-    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
@@ -18,11 +18,11 @@
   <insert id="insert" parameterType="com.mockmall.item.pojo.Carousel">
     insert into carousel (id, image_url, background_color, 
       module_id, type, sort, 
-      is_show, version, is_valid, create_time, 
+      show, version, is_valid, create_time, 
       update_time)
     values (#{id,jdbcType=VARCHAR}, #{imageUrl,jdbcType=VARCHAR}, #{backgroundColor,jdbcType=VARCHAR}, 
       #{moduleId,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, 
-      #{isShow,jdbcType=BIT}, 0, 1, now(),
+      #{show,jdbcType=BIT}, 0, 1, now(),
       now())
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.Carousel">
@@ -32,27 +32,27 @@
       module_id = #{moduleId,jdbcType=VARCHAR},
       type = #{type,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER},
-      is_show = #{isShow,jdbcType=BIT},
+      show = #{show,jdbcType=BIT},
       version = #{version,jdbcType=INTEGER},
       update_time = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, image_url, background_color, module_id, type, sort, is_show, version, 
+    select id, image_url, background_color, module_id, type, sort, `show`, version,
     is_valid, create_time, update_time
     from carousel
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, image_url, background_color, module_id, type, sort, is_show, version, 
+    select id, image_url, background_color, module_id, type, sort, `show`, version,
     is_valid, create_time, update_time
     from carousel
   </select>
 
   <select id="selectByShow" resultMap="BaseResultMap">
-    select id, image_url, background_color, module_id, type, sort, is_show, version,
+    select id, image_url, background_color, module_id, type, sort, `show`, version,
            is_valid, create_time, update_time
     from carousel
-    where is_show = 1;
+    where `show` = 1;
   </select>
 </mapper>

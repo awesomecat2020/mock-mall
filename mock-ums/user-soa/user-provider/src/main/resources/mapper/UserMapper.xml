@@ -13,7 +13,7 @@
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="birthday" jdbcType="DATE" property="birthday" />
     <result column="version" jdbcType="INTEGER" property="version" />
-    <result column="is_valid" jdbcType="BIT" property="isValid" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>

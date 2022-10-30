@@ -40,7 +40,7 @@ public class BasePO implements Serializable {
      * 是否逻辑删除
      * <p> 0：逻辑删除；1：有效数据
      */
-    private Boolean isValid;
+    private Integer isValid;
 
     /**
      * 创建时间
@@ -76,12 +76,12 @@ public class BasePO implements Serializable {
         this.version = version;
     }
 
-    public Boolean getValid() {
+    public Integer getIsValid() {
         return isValid;
     }
 
-    public void setValid(Boolean valid) {
-        isValid = valid;
+    public void setIsValid(Integer isValid) {
+        this.isValid = isValid;
     }
 
     public Date getCreateTime() {

@@ -1,20 +1,19 @@
 package com.mockmall.item.pojo;
 
 import com.mockmall.commonbase.base.BasePO;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Category
  * 
  * @author ccomma
  */
-@Setter
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Category extends BasePO {
-    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 6861988599953691809L;
 
     /**
      * 分类名称

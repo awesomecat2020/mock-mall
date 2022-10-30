@@ -1,5 +1,6 @@
 package com.mockmall.item.mapper;
 
+import com.mockmall.commonbase.base.BaseQuery;
 import com.mockmall.item.pojo.Item;
 
 import java.util.List;
@@ -40,4 +41,9 @@ public interface ItemMapper {
      * @author ccomma
      */
     int updateByPrimaryKey(Item row);
+
+    int countForRecommend(BaseQuery query);
+
+    List<Item> selectForRecommend(BaseQuery query);
+
 }

@@ -1,20 +1,19 @@
 package com.mockmall.item.pojo;
 
 import com.mockmall.commonbase.base.BasePO;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Carousel
  * 
  * @author ccomma
  */
-@Setter
-@Getter
-@ToString
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Carousel extends BasePO {
-    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = 5835637154115052403L;
 
     /**
      * 图片地址
@@ -44,10 +43,6 @@ public class Carousel extends BasePO {
     /**
      * 是否展示
      */
-    private Boolean isShow;
+    private Boolean show;
 
-    /**
-     * 是否有效
-     */
-    private Boolean isValid;
 }

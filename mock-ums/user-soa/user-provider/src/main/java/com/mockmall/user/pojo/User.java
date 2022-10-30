@@ -16,12 +16,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public class User extends BasePO {
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * 主键
-     */
-    private String id;
+    private static final long serialVersionUID = -5749140773568289943L;
 
     /**
      * 用户名
