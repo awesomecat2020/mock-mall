@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.item.mapper.ItemImgMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.ItemImg">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="is_main" jdbcType="INTEGER" property="isMain" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.ItemImg">
+    insert into item_img (id, item_id, url, 
+      sort, is_main, version, 
+      is_valid, create_time, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{isMain,jdbcType=INTEGER}, #{version,jdbcType=INTEGER}, 
+      #{isValid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.ItemImg">
+    update item_img
+    set item_id = #{itemId,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      is_main = #{isMain,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    from item_img
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    from item_img
+  </select>
+
+  <select id="selectMainImgByItemIdList" resultMap="BaseResultMap">
+    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    from item_img
+    <where>
+      <if test="itemIdList != null and itemIdList.size() > 0">
+        and item_id in
+        <foreach collection="itemIdList" item="itemId" separator="," open="(" close=")">
+          #{itemId}
+        </foreach>
+      </if>
+      and is_main = 1
+      and is_valid = 1
+    </where>
+  </select>
+</mapper>

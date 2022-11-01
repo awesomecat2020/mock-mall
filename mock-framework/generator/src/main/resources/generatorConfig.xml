@@ -39,7 +39,7 @@
         </javaTypeResolver>
 
         <!-- 实体类的包名和存放路径 -->
-        <javaModelGenerator targetPackage="com.mockmall.user.pojo" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.mockmall.item.pojo" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <!-- 设置一个根对象，
                 如果设置了这个根对象，那么生成的keyClass或者recordClass会继承这个类；在Table的rootClass属性中可以覆盖该选项
@@ -57,12 +57,12 @@
         </sqlMapGenerator>
 
         <!-- 生成DAO的包名和位置 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mockmall.user.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mockmall.item.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
         <!-- tableName：数据库中的表名或视图名；domainObjectName：生成的实体类的类名-->
-        <table tableName="user" domainObjectName="User"
+        <table tableName="item_img" domainObjectName="ItemImg"
                enableDeleteByPrimaryKey="false"/>
     </context>
 </generatorConfiguration>

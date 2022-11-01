@@ -31,12 +31,18 @@ public class LombokPlugin extends PluginAdapter {
                 valueString = String.valueOf(annotationEnum.isDefaultValue());
             }
 
-            // 添加注解
-            if (Boolean.parseBoolean(valueString)) {
-                String annotationName = annotationEnum.getPropertyName().substring(0, 1).toUpperCase() + annotationEnum.getPropertyName().substring(1);
-                topLevelClass.addAnnotation("@" + annotationName);
-                topLevelClass.addImportedType("lombok." + annotationName);
+            if (!Boolean.parseBoolean(valueString)) {
+                continue;
             }
+
+            // 添加注解
+            String annotationName = annotationEnum.getPropertyName().substring(0, 1).toUpperCase() + annotationEnum.getPropertyName().substring(1);
+            if (annotationEnum == LombokAnnotationEnum.EQUALS_AND_HASH_CODE) {
+                topLevelClass.addAnnotation(String.format("@%s(callSuper = true)", annotationName));
+            } else {
+                topLevelClass.addAnnotation("@" + annotationName);
+            }
+            topLevelClass.addImportedType("lombok." + annotationName);
         }
 
         return true;

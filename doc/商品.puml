@@ -4,6 +4,7 @@ skinparam linetype ortho
 
 ' ==================== 商品 ====================
 entity 商品 {
+=Item
     名称（name）
     店铺 id
     后台类目 id（categoryId）
@@ -52,6 +53,7 @@ entity 商品 {
 ' 如果类目下挂载有商品，就不能删除或作废。
 ' 层次一般三层或四层，商品必须挂载于叶子类目下。
 entity 后台类目 {
+Category
     名称
     父类目 id
     层级
@@ -87,6 +89,7 @@ entity 商品描述 {
     组件元素
 }
 entity 商品图片 {
+=ItemImg
     商品 id
     图片地址
     顺序

@@ -9,15 +9,15 @@ public enum LombokAnnotationEnum {
     /**
      * Setter
      */
-    SETTER("setter", true),
+    SETTER("setter", false),
     /**
      * Getter
      */
-    GETTER("getter", true),
+    GETTER("getter", false),
     /**
      * Data
      */
-    DATA("data", false),
+    DATA("data", true),
     /**
      * Builder
      */
@@ -37,11 +37,11 @@ public enum LombokAnnotationEnum {
     /**
      * EqualsAndHashCode
      */
-    EQUALS_AND_HASH_CODE("equalsAndHashCode", false),
+    EQUALS_AND_HASH_CODE("equalsAndHashCode", true),
     /**
      * ToString
      */
-    TO_STRING("toString", true),
+    TO_STRING("toString", false),
     /**
      * NonNull
      */

@@ -44,4 +44,9 @@ public class ItemBO implements Serializable {
      */
     private String content;
 
+    /**
+     * 主图地址
+     */
+    private String mainImgUrl;
+
 }
