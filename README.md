@@ -1,11 +1,11 @@
 # mock-mall
 模拟企业级商城
 
-TODO: 
+## TODO: 
 - 2022/6/21 前台分类，分类序号
 
 
-系统架构：
+## 系统架构：
 - [ ] [mock-cart](mock-cart)：购物车服务
   - [ ] [cart-soa](mock-cart%2Fcart-soa)：购物车服务
 - [ ] [mock-cms](mock-cms)：内容管理系统
