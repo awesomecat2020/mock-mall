@@ -4,6 +4,7 @@ import com.mockmall.item.pojo.Category;
 import java.util.List;
 
 public interface CategoryMapper {
+
     /**
      * 新增
      * 

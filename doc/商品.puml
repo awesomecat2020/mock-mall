@@ -6,7 +6,7 @@ skinparam linetype ortho
 entity 商品 {
 ==Item
     名称（name）
-    店铺 id
+    店铺 id（entityId）
     后台类目 id（categoryId）
     品牌 id
     顺序
@@ -108,22 +108,26 @@ entity 商品图片 {
 
 
 entity SKU {
-    商品 id
-    店铺 id
-    状态
-    图片地址
-    商品规格
+==ItemSku
+    商品 id（itemId）
+    店铺 id（entityId:string）
+    状态（status:int）
+    图片地址（image:string）
+    商品规格（sellAttr:json）
     ' 商家为商品设置的外部编号
     商品货号
-    价格
-    库存数量
+    价格（price）
     ' 商品在付款减库存的状态下，该 SKU 上未付款的订单数量
-    未付款的订单数量
-    销量
+    未付款的订单数量（大数据统计）
+    销量（大数据统计）
     ' 是否锁定
 }
 entity 商品库存 {
     ' 暂不做
+    店铺 id（entityId:string）
+    商品 id（itemId）
+    SKU id（itemSkuId）
+    库存销售数量（num:int）
 }
 entity 商品库存流水 {
     ' 暂不做

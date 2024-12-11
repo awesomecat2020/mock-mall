@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.item.mapper.AttrValueMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.AttrValue">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.AttrValue">
+    insert into attr_value (id, value, version, 
+      is_valid, create_time, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, 0,
+      1, now(), now()
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.AttrValue">
+    update attr_value
+    set value = #{value,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      update_time = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, value, version, is_valid, create_time, update_time
+    from attr_value
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, value, version, is_valid, create_time, update_time
+    from attr_value
+  </select>
+</mapper>

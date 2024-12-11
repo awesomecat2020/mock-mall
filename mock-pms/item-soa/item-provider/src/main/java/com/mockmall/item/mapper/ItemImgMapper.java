@@ -5,10 +5,11 @@ import com.mockmall.item.pojo.ItemImg;
 import java.util.List;
 
 public interface ItemImgMapper {
+
     /**
      * 新增
-     * 
-     * @param row item_img
+     *
+     * @param row itemImg
      * @return 影响条数
      * @author ccomma
      */
@@ -16,16 +17,16 @@ public interface ItemImgMapper {
 
     /**
      * 根据主键查询
-     * 
+     *
      * @param id 主键
-     * @return itemimg
+     * @return itemImg
      * @author ccomma
      */
     ItemImg selectByPrimaryKey(String id);
 
     /**
      * 查询全部
-     * 
+     *
      * @return {@code List<ItemImg>}
      * @author ccomma
      */
@@ -33,8 +34,8 @@ public interface ItemImgMapper {
 
     /**
      * 根据主键更新
-     * 
-     * @param row item_img
+     *
+     * @param row itemImg
      * @return 影响条数
      * @author ccomma
      */

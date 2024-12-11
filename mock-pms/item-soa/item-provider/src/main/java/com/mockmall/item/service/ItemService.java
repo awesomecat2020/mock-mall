@@ -12,4 +12,6 @@ import com.mockmall.item.bo.ItemBO;
 public interface ItemService {
 
     Page<ItemBO> getPageForRecommend(BaseQuery query);
+
+
 }

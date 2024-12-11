@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.item.mapper.ItemAttrMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.ItemAttr">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="attr_id" jdbcType="VARCHAR" property="attrId" />
+    <result column="attr_value_id" jdbcType="VARCHAR" property="attrValueId" />
+    <result column="attr_name" jdbcType="VARCHAR" property="attrName" />
+    <result column="attr_value" jdbcType="VARCHAR" property="attrValue" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.item.pojo.ItemAttr">
+    insert into item_attr (id, item_id, attr_id, 
+      attr_value_id, attr_name, attr_value, 
+      image, sort, version, 
+      is_valid, create_time, update_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{attrId,jdbcType=VARCHAR}, 
+      #{attrValueId,jdbcType=VARCHAR}, #{attrName,jdbcType=VARCHAR}, #{attrValue,jdbcType=VARCHAR}, 
+      #{image,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 0,
+      1, now(), now()
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.ItemAttr">
+    update item_attr
+    set item_id = #{itemId,jdbcType=VARCHAR},
+      attr_id = #{attrId,jdbcType=VARCHAR},
+      attr_value_id = #{attrValueId,jdbcType=VARCHAR},
+      attr_name = #{attrName,jdbcType=VARCHAR},
+      attr_value = #{attrValue,jdbcType=VARCHAR},
+      image = #{image,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      update_time = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version, 
+    is_valid, create_time, update_time
+    from item_attr
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version, 
+    is_valid, create_time, update_time
+    from item_attr
+  </select>
+</mapper>

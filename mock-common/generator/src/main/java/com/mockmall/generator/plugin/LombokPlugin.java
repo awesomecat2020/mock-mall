@@ -27,7 +27,7 @@ public class LombokPlugin extends PluginAdapter {
             String valueString = properties.getProperty(annotationEnum.getPropertyName());
 
             // if null -> defaultValue
-            if (valueString == null || valueString.trim().length() == 0) {
+            if (valueString == null || valueString.trim().isEmpty()) {
                 valueString = String.valueOf(annotationEnum.isDefaultValue());
             }
 

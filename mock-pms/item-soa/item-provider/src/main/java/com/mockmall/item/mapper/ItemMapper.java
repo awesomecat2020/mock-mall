@@ -9,7 +9,7 @@ public interface ItemMapper {
 
     /**
      * 新增
-     * 
+     *
      * @param row item
      * @return 影响条数
      * @author ccomma
@@ -18,7 +18,7 @@ public interface ItemMapper {
 
     /**
      * 根据主键查询
-     * 
+     *
      * @param id 主键
      * @return item
      * @author ccomma
@@ -27,7 +27,7 @@ public interface ItemMapper {
 
     /**
      * 查询全部
-     * 
+     *
      * @return {@code List<Item>}
      * @author ccomma
      */
@@ -35,7 +35,7 @@ public interface ItemMapper {
 
     /**
      * 根据主键更新
-     * 
+     *
      * @param row item
      * @return 影响条数
      * @author ccomma

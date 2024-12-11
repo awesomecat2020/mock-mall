@@ -31,6 +31,7 @@ public class ItemServiceImpl implements ItemService {
     @Resource
     private ItemImgMapper itemImgMapper;
 
+    // TODO: ES 实现
     @Override
     public Page<ItemBO> getPageForRecommend(BaseQuery query) {
         int count = itemMapper.countForRecommend(query);
