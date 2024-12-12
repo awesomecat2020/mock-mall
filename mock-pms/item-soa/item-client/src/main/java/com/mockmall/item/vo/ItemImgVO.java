@@ -1,19 +1,26 @@
-package com.mockmall.item.pojo;
+package com.mockmall.item.vo;
 
-import com.mockmall.commonbase.base.BasePO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
- * ItemImg
- *
  * @author ccomma
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class ItemImg extends BasePO {
+public class ItemImgVO implements Serializable {
 
-    private static final long serialVersionUID = 5664957440219734999L;
+    private static final long serialVersionUID = -7094497995413982279L;
+
+    /**
+     * 主键
+     */
+    private String id;
+
+    /**
+     * 店铺实体ID
+     */
+    private String entityId;
 
     /**
      * 商品外键id
@@ -34,5 +41,4 @@ public class ItemImg extends BasePO {
      * 是否主图，1：是，0：否
      */
     private Integer isMain;
-
 }

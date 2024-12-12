@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.ItemAttr">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="entity_id" jdbcType="VARCHAR" property="entityId" />
     <result column="attr_id" jdbcType="VARCHAR" property="attrId" />
     <result column="attr_value_id" jdbcType="VARCHAR" property="attrValueId" />
     <result column="attr_name" jdbcType="VARCHAR" property="attrName" />
@@ -16,12 +17,12 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <insert id="insert" parameterType="com.mockmall.item.pojo.ItemAttr">
-    insert into item_attr (id, item_id, attr_id, 
+    insert into item_attr (id, entity_id, item_id, attr_id,
       attr_value_id, attr_name, attr_value, 
       image, sort, version, 
       is_valid, create_time, update_time
       )
-    values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{attrId,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{attrId,jdbcType=VARCHAR},
       #{attrValueId,jdbcType=VARCHAR}, #{attrName,jdbcType=VARCHAR}, #{attrValue,jdbcType=VARCHAR}, 
       #{image,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 0,
       1, now(), now()
@@ -41,14 +42,9 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version, 
+    select id, entity_id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version,
     is_valid, create_time, update_time
     from item_attr
     where id = #{id,jdbcType=VARCHAR}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version, 
-    is_valid, create_time, update_time
-    from item_attr
   </select>
 </mapper>

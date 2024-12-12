@@ -1,4 +1,4 @@
-package com.mockmall.minifront.controller.carousel;
+package com.mockmall.minifront.carousel.controller;
 
 import com.mockmall.commonbase.result.Result;
 import com.mockmall.item.bo.CarouselBO;

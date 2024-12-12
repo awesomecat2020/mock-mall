@@ -5,8 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author mianxian
- * 2024/12/10 下午5:56
+ * @author ccomma
  */
 @Data
 public class ItemVO implements Serializable {
@@ -17,6 +16,11 @@ public class ItemVO implements Serializable {
      * 主键
      */
     private String id;
+
+    /**
+     * 店铺实体ID
+     */
+    private String entityId;
 
     /**
      * 商品名称

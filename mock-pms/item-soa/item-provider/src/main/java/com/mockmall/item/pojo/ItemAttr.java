@@ -6,13 +6,14 @@ import lombok.EqualsAndHashCode;
 
 /**
  * ItemAttr
- * 
+ *
  * @author ccomma
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class ItemAttr extends BasePO {
-    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = -3945632428499518470L;
 
     /**
      * 商品id
@@ -49,8 +50,4 @@ public class ItemAttr extends BasePO {
      */
     private Integer sort;
 
-    /**
-     * 是否有效
-     */
-    private Integer isValid;
 }

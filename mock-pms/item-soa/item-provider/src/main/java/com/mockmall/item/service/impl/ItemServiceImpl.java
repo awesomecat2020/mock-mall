@@ -1,13 +1,17 @@
 package com.mockmall.item.service.impl;
 
-import com.mockmall.commonbase.base.BaseQuery;
 import com.mockmall.commonbase.result.Page;
 import com.mockmall.item.bo.ItemBO;
 import com.mockmall.item.mapper.ItemImgMapper;
 import com.mockmall.item.mapper.ItemMapper;
 import com.mockmall.item.pojo.Item;
 import com.mockmall.item.pojo.ItemImg;
+import com.mockmall.item.request.ItemQuery;
+import com.mockmall.item.service.ItemImgService;
 import com.mockmall.item.service.ItemService;
+import com.mockmall.item.service.ItemSkuService;
+import com.mockmall.item.vo.ItemCompleteVO;
+import com.mockmall.item.vo.ItemVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +31,16 @@ public class ItemServiceImpl implements ItemService {
 
     @Resource
     private ItemMapper itemMapper;
-
     @Resource
     private ItemImgMapper itemImgMapper;
+    @Resource
+    private ItemImgService itemImgService;
+    @Resource
+    private ItemSkuService itemSkuService;
 
     // TODO: ES 实现
     @Override
-    public Page<ItemBO> getPageForRecommend(BaseQuery query) {
+    public Page<ItemBO> getPageForRecommend(ItemQuery query) {
         int count = itemMapper.countForRecommend(query);
         List<Item> itemList = itemMapper.selectForRecommend(query);
         List<String> itemIdList = itemList.stream()
@@ -63,6 +70,19 @@ public class ItemServiceImpl implements ItemService {
         page.setPageCount((long) (int) Math.ceil((double) count / query.getPageSize()));
         page.setList(itemBoList);
         return page;
+    }
+
+    @Override
+    public ItemCompleteVO getCompleteById(String id) {
+        Item item = itemMapper.selectByPrimaryKey(id);
+        ItemVO itemVO = new ItemVO();
+        BeanUtils.copyProperties(item, itemVO);
+
+        ItemCompleteVO itemCompleteVO = new ItemCompleteVO();
+        itemCompleteVO.setItem(itemVO);
+        itemCompleteVO.setItemImgList(itemImgService.listItemId(id));
+        itemCompleteVO.setItemSkuList(itemSkuService.listByItemId(id));
+        return itemCompleteVO;
     }
 
 }

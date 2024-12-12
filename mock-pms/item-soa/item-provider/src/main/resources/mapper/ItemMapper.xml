@@ -3,6 +3,7 @@
 <mapper namespace="com.mockmall.item.mapper.ItemMapper">
   <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.Item">
     <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="entity_id" jdbcType="VARCHAR" property="entityId" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="category_id" jdbcType="VARCHAR" property="categoryId" />
     <result column="price" jdbcType="BIGINT" property="price" />
@@ -15,11 +16,11 @@
   </resultMap>
 
   <insert id="insert" parameterType="com.mockmall.item.pojo.Item">
-    insert into item (id, name, category_id,
+    insert into item (id, entity_id, name, category_id,
       price, status,
       version, is_valid, create_time,
       update_time, content)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{categoryId,jdbcType=VARCHAR},
+    values (#{id,jdbcType=VARCHAR}, #{entityId}, #{name,jdbcType=VARCHAR}, #{categoryId,jdbcType=VARCHAR},
       #{price,jdbcType=BIGINT}, #{status,jdbcType=INTEGER},
       0, 1, now(),
       now(), #{content,jdbcType=LONGVARCHAR})
@@ -36,15 +37,10 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, name, category_id, price, status, version, is_valid,
+    select id, entity_id, name, category_id, price, status, version, is_valid,
            create_time, update_time, content
     from item
     where id = #{id,jdbcType=VARCHAR}
-  </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, name, category_id, price, status, version, is_valid,
-           create_time, update_time, content
-    from item
   </select>
 
   <select id="countForRecommend" resultType="int">
@@ -53,7 +49,7 @@
   </select>
 
   <select id="selectForRecommend" resultMap="BaseResultMap">
-    select id, name, category_id, price, status, version, is_valid,
+    select id, entity_id, name, category_id, price, status, version, is_valid,
            create_time, update_time, content
     from item
     limit #{startPos},#{pageSize}

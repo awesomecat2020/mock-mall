@@ -3,6 +3,7 @@
 <mapper namespace="com.mockmall.item.mapper.ItemImgMapper">
   <resultMap id="BaseResultMap" type="com.mockmall.item.pojo.ItemImg">
     <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="entity_id" jdbcType="VARCHAR" property="entityId" />
     <result column="item_id" jdbcType="VARCHAR" property="itemId" />
     <result column="url" jdbcType="VARCHAR" property="url" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
@@ -13,13 +14,13 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <insert id="insert" parameterType="com.mockmall.item.pojo.ItemImg">
-    insert into item_img (id, item_id, url, 
+    insert into item_img (id, entity_id, item_id, url,
       sort, is_main, version, 
       is_valid, create_time, update_time
       )
-    values (#{id,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
-      #{sort,jdbcType=INTEGER}, #{isMain,jdbcType=INTEGER}, #{version,jdbcType=INTEGER}, 
-      #{isValid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+    values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR},
+      #{sort,jdbcType=INTEGER}, #{isMain,jdbcType=INTEGER}, 0,
+      1, now(), now()
       )
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.mockmall.item.pojo.ItemImg">
@@ -29,23 +30,17 @@
       sort = #{sort,jdbcType=INTEGER},
       is_main = #{isMain,jdbcType=INTEGER},
       version = #{version,jdbcType=INTEGER},
-      is_valid = #{isValid,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    select id, entity_id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
     from item_img
     where id = #{id,jdbcType=VARCHAR}
   </select>
-  <select id="selectAll" resultMap="BaseResultMap">
-    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
-    from item_img
-  </select>
 
   <select id="selectMainImgByItemIdList" resultMap="BaseResultMap">
-    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    select id, entity_id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
     from item_img
     <where>
       <if test="itemIdList != null and itemIdList.size() > 0">
@@ -57,5 +52,11 @@
       and is_main = 1
       and is_valid = 1
     </where>
+  </select>
+
+  <select id="selectByItemId" resultMap="BaseResultMap">
+    select id, item_id, url, sort, is_main, version, is_valid, create_time, update_time
+    from item_img
+    where item_id = #{itemId}
   </select>
 </mapper>

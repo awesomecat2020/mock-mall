@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Item
- * 
+ *
  * @author ccomma
  */
 @Data
@@ -14,11 +14,6 @@ import lombok.EqualsAndHashCode;
 public class Item extends BasePO {
 
     private static final long serialVersionUID = 8330385558621395334L;
-
-    /**
-     * 店铺实体 id
-     */
-    private String entityId;
 
     /**
      * 商品名称

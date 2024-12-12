@@ -62,7 +62,7 @@
         </javaClientGenerator>
 
         <!-- tableName：数据库中的表名或视图名；domainObjectName：生成的实体类的类名-->
-        <table tableName="item_attr" domainObjectName="ItemAttr"
+        <table tableName="item_sku" domainObjectName="ItemSku"
                enableDeleteByPrimaryKey="false"/>
     </context>
 </generatorConfiguration>

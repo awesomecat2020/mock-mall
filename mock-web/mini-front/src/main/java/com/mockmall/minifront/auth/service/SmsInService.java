@@ -1,4 +1,4 @@
-package com.mockmall.minifront.service.sms;
+package com.mockmall.minifront.auth.service;
 
 
 /**

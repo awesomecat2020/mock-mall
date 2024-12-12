@@ -12,7 +12,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class Attribute extends BasePO {
-    private static final long serialVersionUID = 1L;
+
+    private static final long serialVersionUID = -7786508517635686447L;
 
     /**
      * 类型 1：销售属性；2：非关键属性
@@ -34,8 +35,4 @@ public class Attribute extends BasePO {
      */
     private Integer source;
 
-    /**
-     * 是否有效
-     */
-    private Integer isValid;
 }

@@ -1,8 +1,8 @@
-package com.mockmall.minifront.service.sms.impl;
+package com.mockmall.minifront.auth.service.impl;
 
 import com.mockmall.commonbase.exception.BizException;
-import com.mockmall.minifront.service.sms.SmsInService;
-import com.mockmall.minifront.utils.SmsUtil;
+import com.mockmall.minifront.auth.service.SmsInService;
+import com.mockmall.minifront.common.utils.SmsUtil;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 

@@ -5,10 +5,11 @@ import com.mockmall.item.pojo.ItemAttr;
 import java.util.List;
 
 public interface ItemAttrMapper {
+
     /**
      * 新增
      * 
-     * @param row item_attr
+     * @param row itemAttr
      * @return 影响条数
      * @author ccomma
      */
@@ -18,23 +19,15 @@ public interface ItemAttrMapper {
      * 根据主键查询
      * 
      * @param id 主键
-     * @return itemattr
+     * @return itemAttr
      * @author ccomma
      */
     ItemAttr selectByPrimaryKey(String id);
 
     /**
-     * 查询全部
-     * 
-     * @return {@code List<ItemAttr>}
-     * @author ccomma
-     */
-    List<ItemAttr> selectAll();
-
-    /**
      * 根据主键更新
      * 
-     * @param row item_attr
+     * @param row itemAttr
      * @return 影响条数
      * @author ccomma
      */

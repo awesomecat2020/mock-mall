@@ -1,6 +1,7 @@
 package com.mockmall.item.mapper;
 
 import com.mockmall.item.pojo.ItemImg;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -25,14 +26,6 @@ public interface ItemImgMapper {
     ItemImg selectByPrimaryKey(String id);
 
     /**
-     * 查询全部
-     *
-     * @return {@code List<ItemImg>}
-     * @author ccomma
-     */
-    List<ItemImg> selectAll();
-
-    /**
      * 根据主键更新
      *
      * @param row itemImg
@@ -49,4 +42,13 @@ public interface ItemImgMapper {
      * @author ccomma
      */
     List<ItemImg> selectMainImgByItemIdList(List<String> itemIdList);
+
+    /**
+     * 查询商品图片列表
+     *
+     * @param itemId   商品 id
+     * @return {@link List< ItemImg>}
+     * @author ccomma
+     */
+    List<ItemImg> selectByItemId(String itemId);
 }

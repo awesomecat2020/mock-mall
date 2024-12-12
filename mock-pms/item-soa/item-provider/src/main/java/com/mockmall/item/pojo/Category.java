@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Category
- * 
+ *
  * @author ccomma
  */
 @Data
