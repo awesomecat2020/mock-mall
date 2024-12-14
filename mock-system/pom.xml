@@ -13,6 +13,9 @@
 
     <modules>
         <module>dictionary-soa</module>
+        <module>base-config</module>
+        <module>base-config/base-config-client</module>
+        <module>base-config/base-config-provider</module>
     </modules>
 
     <properties>
