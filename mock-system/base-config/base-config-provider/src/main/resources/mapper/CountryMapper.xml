@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.baseconfig.mapper.CountryMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.baseconfig.pojo.Country">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="spell" jdbcType="VARCHAR" property="spell" />
+    <result column="e_name" jdbcType="VARCHAR" property="eName" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="latitude" jdbcType="DECIMAL" property="latitude" />
+    <result column="country_code" jdbcType="VARCHAR" property="countryCode" />
+    <result column="check_patten" jdbcType="VARCHAR" property="checkPatten" />
+    <result column="is_sms" jdbcType="SMALLINT" property="isSms" />
+    <result column="time_zone" jdbcType="VARCHAR" property="timeZone" />
+    <result column="default_lang" jdbcType="VARCHAR" property="defaultLang" />
+    <result column="zm_center_id" jdbcType="VARCHAR" property="zmCenterId" />
+    <result column="cluster_url" jdbcType="VARCHAR" property="clusterUrl" />
+    <result column="message_url" jdbcType="VARCHAR" property="messageUrl" />
+    <result column="order_url" jdbcType="VARCHAR" property="orderUrl" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="currency_id" jdbcType="VARCHAR" property="currencyId" />
+    <result column="sort_code" jdbcType="TINYINT" property="sortCode" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.baseconfig.pojo.Country">
+    insert into country (id, name, spell, 
+      e_name, code, longitude, 
+      latitude, country_code, check_patten, 
+      is_sms, time_zone, default_lang, 
+      zm_center_id, cluster_url, message_url, 
+      order_url, version, is_valid, 
+      create_time, update_time, currency_id, 
+      sort_code)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{spell,jdbcType=VARCHAR}, 
+      #{eName,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, #{longitude,jdbcType=DECIMAL}, 
+      #{latitude,jdbcType=DECIMAL}, #{countryCode,jdbcType=VARCHAR}, #{checkPatten,jdbcType=VARCHAR}, 
+      #{isSms,jdbcType=SMALLINT}, #{timeZone,jdbcType=VARCHAR}, #{defaultLang,jdbcType=VARCHAR}, 
+      #{zmCenterId,jdbcType=VARCHAR}, #{clusterUrl,jdbcType=VARCHAR}, #{messageUrl,jdbcType=VARCHAR}, 
+      #{orderUrl,jdbcType=VARCHAR}, #{version,jdbcType=INTEGER}, #{isValid,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{currencyId,jdbcType=VARCHAR}, 
+      #{sortCode,jdbcType=TINYINT})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.baseconfig.pojo.Country">
+    update country
+    set name = #{name,jdbcType=VARCHAR},
+      spell = #{spell,jdbcType=VARCHAR},
+      e_name = #{eName,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=DECIMAL},
+      latitude = #{latitude,jdbcType=DECIMAL},
+      country_code = #{countryCode,jdbcType=VARCHAR},
+      check_patten = #{checkPatten,jdbcType=VARCHAR},
+      is_sms = #{isSms,jdbcType=SMALLINT},
+      time_zone = #{timeZone,jdbcType=VARCHAR},
+      default_lang = #{defaultLang,jdbcType=VARCHAR},
+      zm_center_id = #{zmCenterId,jdbcType=VARCHAR},
+      cluster_url = #{clusterUrl,jdbcType=VARCHAR},
+      message_url = #{messageUrl,jdbcType=VARCHAR},
+      order_url = #{orderUrl,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      currency_id = #{currencyId,jdbcType=VARCHAR},
+      sort_code = #{sortCode,jdbcType=TINYINT}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, name, spell, e_name, code, longitude, latitude, country_code, check_patten, 
+    is_sms, time_zone, default_lang, zm_center_id, cluster_url, message_url, order_url, 
+    version, is_valid, create_time, update_time, currency_id, sort_code
+    from country
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, name, spell, e_name, code, longitude, latitude, country_code, check_patten, 
+    is_sms, time_zone, default_lang, zm_center_id, cluster_url, message_url, order_url, 
+    version, is_valid, create_time, update_time, currency_id, sort_code
+    from country
+  </select>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.baseconfig.mapper.TownMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.baseconfig.pojo.Town">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="spell" jdbcType="VARCHAR" property="spell" />
+    <result column="zip_code" jdbcType="VARCHAR" property="zipCode" />
+    <result column="area_code" jdbcType="VARCHAR" property="areaCode" />
+    <result column="sort_code" jdbcType="INTEGER" property="sortCode" />
+    <result column="longitude" jdbcType="DECIMAL" property="longitude" />
+    <result column="latitude" jdbcType="DECIMAL" property="latitude" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.baseconfig.pojo.Town">
+    insert into town (id, city_id, name, 
+      spell, zip_code, area_code, 
+      sort_code, longitude, latitude, 
+      version, is_valid, create_time, 
+      update_time)
+    values (#{id,jdbcType=VARCHAR}, #{cityId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{spell,jdbcType=VARCHAR}, #{zipCode,jdbcType=VARCHAR}, #{areaCode,jdbcType=VARCHAR}, 
+      #{sortCode,jdbcType=INTEGER}, #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, 
+      #{version,jdbcType=INTEGER}, #{isValid,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.baseconfig.pojo.Town">
+    update town
+    set city_id = #{cityId,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      spell = #{spell,jdbcType=VARCHAR},
+      zip_code = #{zipCode,jdbcType=VARCHAR},
+      area_code = #{areaCode,jdbcType=VARCHAR},
+      sort_code = #{sortCode,jdbcType=INTEGER},
+      longitude = #{longitude,jdbcType=DECIMAL},
+      latitude = #{latitude,jdbcType=DECIMAL},
+      version = #{version,jdbcType=INTEGER},
+      is_valid = #{isValid,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, city_id, name, spell, zip_code, area_code, sort_code, longitude, latitude, 
+    version, is_valid, create_time, update_time
+    from town
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, city_id, name, spell, zip_code, area_code, sort_code, longitude, latitude, 
+    version, is_valid, create_time, update_time
+    from town
+  </select>
+</mapper>
