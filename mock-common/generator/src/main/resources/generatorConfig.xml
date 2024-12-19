@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
+    <properties resource="jdbc.properties"/>
     <context id="DB2Tables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <!-- beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； -->
@@ -27,10 +28,10 @@
 
         <!--数据库连接参数 -->
         <jdbcConnection
-                driverClass="com.mysql.cj.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/mall?useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"
-                userId="root"
-                password="123456">
+                driverClass="${jdbc.driverClass}"
+                connectionURL="${jdbc.connectionURL}"
+                userId="${jdbc.userId}"
+                password="${jdbc.password}">
         </jdbcConnection>
 
         <!-- 类型转换 -->
@@ -63,12 +64,6 @@
 
         <!-- tableName：数据库中的表名或视图名；domainObjectName：生成的实体类的类名-->
         <table tableName="country" domainObjectName="Country"
-               enableDeleteByPrimaryKey="false"/>
-        <table tableName="province" domainObjectName="Province"
-               enableDeleteByPrimaryKey="false"/>
-        <table tableName="city" domainObjectName="City"
-               enableDeleteByPrimaryKey="false"/>
-        <table tableName="town" domainObjectName="Town"
                enableDeleteByPrimaryKey="false"/>
     </context>
 </generatorConfiguration>
