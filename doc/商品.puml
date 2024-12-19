@@ -187,6 +187,7 @@ entity 商品关联属性 {
     属性值（attrValue）
     图片（image）
     顺序（sort）
+    类型（attrType）
 }
 entity 属性值 {
 ==AttrValue

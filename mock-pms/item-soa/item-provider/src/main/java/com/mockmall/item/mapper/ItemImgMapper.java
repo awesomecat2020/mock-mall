@@ -46,7 +46,7 @@ public interface ItemImgMapper {
     /**
      * 查询商品图片列表
      *
-     * @param itemId   商品 id
+     * @param itemId 商品 id
      * @return {@link List< ItemImg>}
      * @author ccomma
      */

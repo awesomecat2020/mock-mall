@@ -7,8 +7,7 @@ import java.util.List;
 /**
  * ItemSkuService
  *
- * @author mianxian
- * 2024/12/12 下午7:14
+ * @author ccomma
  */
 public interface ItemSkuService {
 

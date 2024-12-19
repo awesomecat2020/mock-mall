@@ -85,6 +85,21 @@ public class GeneralResult<T> implements Result<T> {
         return result;
     }
 
+    /**
+     * 失败
+     *
+     * @param source result
+     * @return 失败
+     * @author ccomma
+     */
+    public static <T> Result<T> failure(Result<?> source) {
+        GeneralResult<T> result = new GeneralResult<>();
+        result.success = false;
+        result.code = source.getCode();
+        result.message = source.getMessage();
+        return result;
+    }
+
     @Override
     public Boolean getSuccess() {
         return success;

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.user.mapper.UserAddressMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.user.pojo.UserAddress">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="country_id" jdbcType="VARCHAR" property="countryId" />
+    <result column="province_id" jdbcType="VARCHAR" property="provinceId" />
+    <result column="city_id" jdbcType="VARCHAR" property="cityId" />
+    <result column="town_id" jdbcType="VARCHAR" property="townId" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="ext" jdbcType="VARCHAR" property="ext" />
+    <result column="is_default" jdbcType="INTEGER" property="isDefault" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.user.pojo.UserAddress">
+    insert into user_address (id, user_id, receiver, 
+      mobile, country_id, province_id, 
+      city_id, town_id, detail, 
+      address, ext, is_default, 
+      version, is_valid, create_time, 
+      update_time)
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, 
+      #{mobile,jdbcType=VARCHAR}, #{countryId,jdbcType=VARCHAR}, #{provinceId,jdbcType=VARCHAR}, 
+      #{cityId,jdbcType=VARCHAR}, #{townId,jdbcType=VARCHAR}, #{detail,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{ext,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}, 
+      0, 1, now(),
+      now())
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.user.pojo.UserAddress">
+    update user_address
+    set user_id = #{userId,jdbcType=VARCHAR},
+      receiver = #{receiver,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      country_id = #{countryId,jdbcType=VARCHAR},
+      province_id = #{provinceId,jdbcType=VARCHAR},
+      city_id = #{cityId,jdbcType=VARCHAR},
+      town_id = #{townId,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      ext = #{ext,jdbcType=VARCHAR},
+      is_default = #{isDefault,jdbcType=INTEGER},
+      version = #{version,jdbcType=INTEGER},
+      update_time = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, user_id, receiver, mobile, country_id, province_id, city_id, town_id, 
+    detail, address, ext, is_default, version, is_valid, create_time, update_time
+    from user_address
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, receiver, mobile, country_id, province_id, city_id, town_id, 
+    detail, address, ext, is_default, version, is_valid, create_time, update_time
+    from user_address
+  </select>
+
+  <select id="selectDefaultByUserId" resultMap="BaseResultMap">
+    select id, user_id, receiver, mobile, country_id, province_id, city_id, town_id,
+    detail, address, ext, is_default, version, is_valid, create_time, update_time
+    from user_address
+    where user_id = #{userId,jdbcType=VARCHAR}
+    and is_default = 1
+    limit 1
+  </select>
+</mapper>

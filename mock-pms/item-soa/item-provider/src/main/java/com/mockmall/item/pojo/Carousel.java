@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * Carousel
- * 
+ *
  * @author ccomma
  */
 @Data

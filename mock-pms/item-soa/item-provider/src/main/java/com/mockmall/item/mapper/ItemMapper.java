@@ -21,7 +21,7 @@ public interface ItemMapper {
     /**
      * 根据主键查询
      *
-     * @param id       主键
+     * @param id 主键
      * @return item
      * @author ccomma
      */

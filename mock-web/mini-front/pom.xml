@@ -23,11 +23,17 @@
         <commons-lang3.version>3.5</commons-lang3.version>
         <item-client.version>0.0.1-SNAPSHOT</item-client.version>
         <auth-platform.version>0.0.1-SNAPSHOT</auth-platform.version>
+        <user-client.version>0.0.1-SNAPSHOT</user-client.version>
         <common-base.version>0.0.1-SNAPSHOT</common-base.version>
     </properties>
 
     <dependencies>
         <!-- client -->
+        <dependency>
+            <groupId>com.mockmall</groupId>
+            <artifactId>user-client</artifactId>
+            <version>${user-client.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.mockmall</groupId>
             <artifactId>item-client</artifactId>

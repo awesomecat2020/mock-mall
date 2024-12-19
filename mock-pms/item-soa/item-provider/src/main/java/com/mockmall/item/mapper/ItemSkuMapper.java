@@ -8,7 +8,7 @@ public interface ItemSkuMapper {
 
     /**
      * 新增
-     * 
+     *
      * @param row itemSku
      * @return 影响条数
      * @author ccomma
@@ -17,7 +17,7 @@ public interface ItemSkuMapper {
 
     /**
      * 根据主键查询
-     * 
+     *
      * @param id 主键
      * @return itemSku
      * @author ccomma
@@ -26,7 +26,7 @@ public interface ItemSkuMapper {
 
     /**
      * 查询全部
-     * 
+     *
      * @return {@code List<ItemSku>}
      * @author ccomma
      */
@@ -34,7 +34,7 @@ public interface ItemSkuMapper {
 
     /**
      * 根据主键更新
-     * 
+     *
      * @param row itemSku
      * @return 影响条数
      * @author ccomma

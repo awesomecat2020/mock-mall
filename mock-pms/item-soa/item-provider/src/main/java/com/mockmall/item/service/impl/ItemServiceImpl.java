@@ -2,11 +2,13 @@ package com.mockmall.item.service.impl;
 
 import com.mockmall.commonbase.result.Page;
 import com.mockmall.item.bo.ItemBO;
+import com.mockmall.item.constants.ItemConstant;
 import com.mockmall.item.mapper.ItemImgMapper;
 import com.mockmall.item.mapper.ItemMapper;
 import com.mockmall.item.pojo.Item;
 import com.mockmall.item.pojo.ItemImg;
 import com.mockmall.item.request.ItemQuery;
+import com.mockmall.item.service.AttributeService;
 import com.mockmall.item.service.ItemImgService;
 import com.mockmall.item.service.ItemService;
 import com.mockmall.item.service.ItemSkuService;
@@ -37,6 +39,8 @@ public class ItemServiceImpl implements ItemService {
     private ItemImgService itemImgService;
     @Resource
     private ItemSkuService itemSkuService;
+    @Resource
+    private AttributeService attributeService;
 
     // TODO: ES 实现
     @Override
@@ -82,6 +86,8 @@ public class ItemServiceImpl implements ItemService {
         itemCompleteVO.setItem(itemVO);
         itemCompleteVO.setItemImgList(itemImgService.listItemId(id));
         itemCompleteVO.setItemSkuList(itemSkuService.listByItemId(id));
+        // 分类属性
+        itemCompleteVO.setCategoryAttrList(attributeService.listItemAttrByItemId(id, ItemConstant.ATTRIBUTE_TYPE_CATEGORY_ATTRIBUTE));
         return itemCompleteVO;
     }
 

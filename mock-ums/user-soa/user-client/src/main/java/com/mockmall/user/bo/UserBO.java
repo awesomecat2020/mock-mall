@@ -8,8 +8,7 @@ import java.util.Date;
 /**
  * UserBO
  *
- * @author mianxian
- * 2022/8/15 13:10
+ * @author ccomma
  */
 @Data
 public class UserBO implements Serializable {

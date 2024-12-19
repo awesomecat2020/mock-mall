@@ -1,22 +1,27 @@
-package com.mockmall.item.pojo;
+package com.mockmall.item.vo;
 
-import com.mockmall.commonbase.base.BasePO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
- * Attribute
+ * Attribute VO
  *
  * @author ccomma
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class Attribute extends BasePO {
+public class AttributeVO implements Serializable {
 
-    private static final long serialVersionUID = -7786508517635686447L;
+    private static final long serialVersionUID = 8098947110903666661L;
+
+    /**
+     * 主键
+     */
+    private String id;
 
     /**
      * 类型 1：销售属性；2：非关键属性
+     * @see com.mockmall.item.constants.ItemConstant
      */
     private Integer type;
 

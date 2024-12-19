@@ -1,8 +1,10 @@
 package com.mockmall.item.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.mockmall.item.mapper.ItemSkuMapper;
 import com.mockmall.item.pojo.ItemSku;
 import com.mockmall.item.service.ItemSkuService;
+import com.mockmall.item.vo.ItemSkuPropVO;
 import com.mockmall.item.vo.ItemSkuVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -14,8 +16,7 @@ import java.util.stream.Collectors;
 /**
  * ItemSkuService
  *
- * @author mianxian
- * 2024/12/12 下午7:14
+ * @author ccomma
  */
 @Service
 public class ItemSkuServiceImpl implements ItemSkuService {
@@ -30,6 +31,7 @@ public class ItemSkuServiceImpl implements ItemSkuService {
                 .map(itemSku -> {
                     ItemSkuVO itemSkuVO = new ItemSkuVO();
                     BeanUtils.copyProperties(itemSku, itemSkuVO);
+                    itemSkuVO.setItemSkuPropList(JSON.parseArray(itemSku.getSellAttr(), ItemSkuPropVO.class));
                     return itemSkuVO;
                 })
                 .collect(Collectors.toList());

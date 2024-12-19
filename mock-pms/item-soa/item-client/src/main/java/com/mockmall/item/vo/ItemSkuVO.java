@@ -3,6 +3,7 @@ package com.mockmall.item.vo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author ccomma
@@ -38,9 +39,9 @@ public class ItemSkuVO implements Serializable {
     private String image;
 
     /**
-     * 销售属性
+     * sku 属性列表
      */
-    private String sellAttr;
+    private List<ItemSkuPropVO> itemSkuPropList;
 
     /**
      * 价格

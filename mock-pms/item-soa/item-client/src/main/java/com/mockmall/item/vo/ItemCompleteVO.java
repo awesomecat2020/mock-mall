@@ -29,4 +29,9 @@ public class ItemCompleteVO implements Serializable {
      * sku 列表
      */
     private List<ItemSkuVO> itemSkuList;
+
+    /**
+     * 商品分类属性
+     */
+    private List<ItemAttrVO> categoryAttrList;
 }

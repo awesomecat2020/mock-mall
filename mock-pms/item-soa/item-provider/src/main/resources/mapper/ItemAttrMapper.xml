@@ -10,6 +10,7 @@
     <result column="attr_name" jdbcType="VARCHAR" property="attrName" />
     <result column="attr_value" jdbcType="VARCHAR" property="attrValue" />
     <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="attr_type" jdbcType="INTEGER" property="attrType" />
     <result column="sort" jdbcType="INTEGER" property="sort" />
     <result column="version" jdbcType="INTEGER" property="version" />
     <result column="is_valid" jdbcType="INTEGER" property="isValid" />
@@ -19,12 +20,12 @@
   <insert id="insert" parameterType="com.mockmall.item.pojo.ItemAttr">
     insert into item_attr (id, entity_id, item_id, attr_id,
       attr_value_id, attr_name, attr_value, 
-      image, sort, version, 
+      image, attr_type, sort, version,
       is_valid, create_time, update_time
       )
     values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{attrId,jdbcType=VARCHAR},
       #{attrValueId,jdbcType=VARCHAR}, #{attrName,jdbcType=VARCHAR}, #{attrValue,jdbcType=VARCHAR}, 
-      #{image,jdbcType=VARCHAR}, #{sort,jdbcType=INTEGER}, 0,
+      #{image,jdbcType=VARCHAR}, #{attrType,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, 0,
       1, now(), now()
       )
   </insert>
@@ -36,15 +37,23 @@
       attr_name = #{attrName,jdbcType=VARCHAR},
       attr_value = #{attrValue,jdbcType=VARCHAR},
       image = #{image,jdbcType=VARCHAR},
+      attr_type = #{attrType,jdbcType=INTEGER},
       sort = #{sort,jdbcType=INTEGER},
       version = #{version,jdbcType=INTEGER},
       update_time = now()
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, entity_id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, sort, version,
+    select id, entity_id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, attr_type, sort, version,
     is_valid, create_time, update_time
     from item_attr
     where id = #{id,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectByItemId" resultMap="BaseResultMap">
+    select id, entity_id, item_id, attr_id, attr_value_id, attr_name, attr_value, image, attr_type, sort, version,
+    is_valid, create_time, update_time
+    from item_attr
+    where item_id = #{itemId} and attr_type = #{attrType}
   </select>
 </mapper>
