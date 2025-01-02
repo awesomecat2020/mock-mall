@@ -1,0 +1,43 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: trade-platform-provider
+
+# dubbo
+dubbo:
+  application:
+    name: trade-platform-provider
+#    logger: slf4j
+    qos-enable: true
+    qos-port: 22222
+    qos-accept-foreign-ip: false
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    # 设置超时时间
+    timeout: 3000
+    # 配置 namespace
+#    parameters:
+#      namespace: 88b66463-1685-40b3-ba9c-7b25e526dcfb
+    # 关闭元数据中心
+#    use-as-metadata-center: false
+    # 关闭配置中心
+#    use-as-config-center: false
+    # 服务分组
+#    group: cart
+  protocol:
+    name: dubbo
+    port: 20882
+#    threads: 500
+#    dispatcher: all
+#    threadpool: fixed
+  consumer:
+    retries: 3
+    check: false
+
+# log
+logging:
+  level:
+    com.mockmall.cart: DEBUG
+  config: classpath:log4j2.yml

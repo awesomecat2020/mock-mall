@@ -11,12 +11,15 @@ import com.mockmall.item.vo.ItemCompleteVO;
 import com.mockmall.minifront.item.vo.ItemDetailVO;
 import com.mockmall.user.service.UserAddressClientService;
 import com.mockmall.user.vo.UserAddressVO;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Objects;
 
 /**
  * 商品 Controller
@@ -39,9 +42,11 @@ public class ItemController {
     }
 
     @GetMapping("/get_item_detail")
-    public Result<ItemDetailVO> getItemDetail(@RequestParam String itemId,
-                                              @RequestParam String userId) {
+    public Result<ItemDetailVO> getItemDetail(@RequestParam String itemId) {
         try {
+            // SSO 中获取用户信息
+            String userId = "";
+
             Result<ItemCompleteVO> itemCompleteResult = itemClientService.getCompleteById(itemId);
             if (!itemCompleteResult.getSuccess()) {
                 return GeneralResult.failure(itemCompleteResult);
@@ -56,11 +61,13 @@ public class ItemController {
             itemDetailVO.setCategoryAttrList(itemCompleteVO.getCategoryAttrList());
 
             // 地址
-            Result<UserAddressVO> defaultUserAddressResult = userAddressClientService.getDefault(userId);
-            if (!defaultUserAddressResult.getSuccess()) {
-                return GeneralResult.failure(defaultUserAddressResult);
+            if (StringUtils.isNotBlank(userId)) {
+                Result<UserAddressVO> defaultUserAddressResult = userAddressClientService.getDefault(userId);
+                if (!defaultUserAddressResult.getSuccess()) {
+                    return GeneralResult.failure(defaultUserAddressResult);
+                }
+                itemDetailVO.setDefaultAddress(defaultUserAddressResult.getData());
             }
-            itemDetailVO.setDefaultAddress(defaultUserAddressResult.getData());
 
             // TODO: 评价
 

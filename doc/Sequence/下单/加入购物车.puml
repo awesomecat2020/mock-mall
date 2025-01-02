@@ -1,0 +1,21 @@
+@startuml
+
+participant "前端" as f #orange
+participant "mini-front" as mf
+participant "trade-platform" as tp
+participant "item-platform" as ip
+participant "cart" as c
+
+autonumber
+f -> mf: 加入购物车
+mf -> tp: 算价
+tp -> ip: 算价
+ip --> mf
+
+mf -> tp: 加入购物车
+tp -> c: 加入购物车
+c -> c: 检查
+c -> c: 加入购物车
+c --> f
+
+@enduml

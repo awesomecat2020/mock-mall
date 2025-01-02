@@ -2,22 +2,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.mockmall</groupId>
+        <artifactId>trade-platform</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-    <groupId>com.mockmall</groupId>
-    <artifactId>mock-oms</artifactId>
+    <artifactId>trade-platform-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>mock-oms</name>
-    <description>mock-oms</description>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>order-soa</module>
-        <module>cart-soa</module>
-        <module>trade-platform</module>
-    </modules>
+    <name>trade-platform-client</name>
+    <description>trade-platform-client</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <dependencies>
+
+    </dependencies>
+
 </project>
