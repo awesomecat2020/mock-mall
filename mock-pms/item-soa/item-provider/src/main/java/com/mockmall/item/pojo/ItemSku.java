@@ -21,6 +21,11 @@ public class ItemSku extends BasePO {
     private String itemId;
 
     /**
+     * 商品名称，字段冗余
+     */
+    private String itemName;
+
+    /**
      * sku 状态
      */
     private Integer status;

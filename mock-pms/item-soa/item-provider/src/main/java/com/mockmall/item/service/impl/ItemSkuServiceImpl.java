@@ -36,4 +36,13 @@ public class ItemSkuServiceImpl implements ItemSkuService {
                 })
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public ItemSkuVO getById(String id) {
+        ItemSku itemSku = itemSkuMapper.selectByPrimaryKey(id);
+
+        ItemSkuVO itemSkuVO = new ItemSkuVO();
+        BeanUtils.copyProperties(itemSku, itemSkuVO);
+        return itemSkuVO;
+    }
 }

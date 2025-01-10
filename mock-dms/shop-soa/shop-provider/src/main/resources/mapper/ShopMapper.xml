@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mockmall.shop.mapper.ShopMapper">
+  <resultMap id="BaseResultMap" type="com.mockmall.shop.pojo.Shop">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="entity_id" jdbcType="VARCHAR" property="entityId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="is_valid" jdbcType="INTEGER" property="isValid" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.mockmall.shop.pojo.Shop">
+    insert into shop (id, entity_id, name, 
+      version, is_valid, create_time, 
+      update_time)
+    values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      0, 1, now(),
+      now())
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.mockmall.shop.pojo.Shop">
+    update shop
+    set entity_id = #{entityId,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      update_time = now()
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select id, entity_id, name, version, is_valid, create_time, update_time
+    from shop
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, entity_id, name, version, is_valid, create_time, update_time
+    from shop
+  </select>
+
+  <select id="selectByEntityId" resultMap="BaseResultMap">
+    select id, entity_id, name, version, is_valid, create_time, update_time
+    from shop
+    where entity_id = #{entityId,jdbcType=VARCHAR}
+  </select>
+</mapper>

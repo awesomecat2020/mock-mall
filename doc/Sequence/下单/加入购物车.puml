@@ -7,7 +7,9 @@ participant "item-platform" as ip
 participant "cart" as c
 
 autonumber
+' price
 f -> mf: 加入购物车
+' 拿到 price、fee、memberPrice
 mf -> tp: 算价
 tp -> ip: 算价
 ip --> mf

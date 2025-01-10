@@ -5,6 +5,7 @@
     <modules>
         <module>mock-cms</module>
         <module>mock-common</module>
+        <module>mock-dms</module>
         <module>mock-oms</module>
         <module>mock-pay</module>
         <module>mock-pms</module>

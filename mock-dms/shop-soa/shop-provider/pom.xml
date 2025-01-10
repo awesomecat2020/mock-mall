@@ -4,21 +4,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.mockmall</groupId>
-		<artifactId>trade-platform</artifactId>
+		<artifactId>shop-soa</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>trade-platform-provider</artifactId>
+	<artifactId>shop-provider</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>trade-platform-provider</name>
-	<description>trade-platform-provider</description>
+	<name>shop-provider</name>
+	<description>shop-provider</description>
 	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<trade-platform-client.version>0.0.1-SNAPSHOT</trade-platform-client.version>
-		<item-client.version>0.0.1-SNAPSHOT</item-client.version>
 		<shop-client.version>0.0.1-SNAPSHOT</shop-client.version>
 	</properties>
 
@@ -28,16 +26,6 @@
 			<groupId>com.mockmall</groupId>
 			<artifactId>shop-client</artifactId>
 			<version>${shop-client.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mockmall</groupId>
-			<artifactId>item-client</artifactId>
-			<version>${item-client.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.mockmall</groupId>
-			<artifactId>trade-platform-client</artifactId>
-			<version>${trade-platform-client.version}</version>
 		</dependency>
 
 		<!-- spring -->
@@ -80,6 +68,18 @@
 		<dependency>
 			<groupId>org.apache.curator</groupId>
 			<artifactId>curator-x-discovery</artifactId>
+		</dependency>
+
+		<!-- mybatis -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
 
 		<!-- junit -->

@@ -29,6 +29,11 @@ public class ItemSkuVO implements Serializable {
     private String itemId;
 
     /**
+     * 商品名称，冗余
+     */
+    private String itemName;
+
+    /**
      * sku 状态
      */
     private Integer status;

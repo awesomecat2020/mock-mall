@@ -1,5 +1,7 @@
 package com.mockmall.commonbase.exception;
 
+import com.mockmall.commonbase.result.Result;
+
 /**
  * 业务异常
  *
@@ -72,6 +74,11 @@ public class BizException extends RuntimeException {
     public BizException(final String code, final String message) {
         super(message);
         this.code = code;
+    }
+
+    public BizException(Result<?> result) {
+        super(result.getMessage());
+        this.code = result.getCode();
     }
 
     @Override

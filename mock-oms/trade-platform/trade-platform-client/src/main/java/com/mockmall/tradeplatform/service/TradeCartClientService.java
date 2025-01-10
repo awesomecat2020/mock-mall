@@ -1,7 +1,8 @@
 package com.mockmall.tradeplatform.service;
 
 import com.mockmall.commonbase.result.Result;
-import com.mockmall.tradeplatform.request.TradeCartItem;
+import com.mockmall.tradeplatform.request.TradeCartAddRequest;
+import com.mockmall.tradeplatform.vo.TradeCartItemVO;
 
 import java.util.List;
 
@@ -12,5 +13,5 @@ import java.util.List;
  */
 public interface TradeCartClientService {
 
-    Result<List<TradeCartItem>> add(TradeCartItem tradeCartItem);
+    Result<List<TradeCartItemVO>> add(TradeCartAddRequest tradeCartAddRequest);
 }

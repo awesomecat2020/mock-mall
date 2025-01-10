@@ -5,6 +5,7 @@
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="entity_id" jdbcType="VARCHAR" property="entityId" />
     <result column="item_id" jdbcType="VARCHAR" property="itemId" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="image" jdbcType="VARCHAR" property="image" />
     <result column="sell_attr" jdbcType="VARCHAR" property="sellAttr" />
@@ -15,11 +16,11 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <insert id="insert" parameterType="com.mockmall.item.pojo.ItemSku">
-    insert into item_sku (id, entity_id, item_id, 
+    insert into item_sku (id, entity_id, item_id, item_name,
       status, image, sell_attr, 
       price, version, is_valid, 
       create_time, update_time)
-    values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{entityId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR},
       #{status,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, #{sellAttr,jdbcType=VARCHAR}, 
       #{price,jdbcType=INTEGER}, 0, 1,
       now(), now())
@@ -28,6 +29,7 @@
     update item_sku
     set entity_id = #{entityId,jdbcType=VARCHAR},
       item_id = #{itemId,jdbcType=VARCHAR},
+      item_name = #{itemName,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},
       image = #{image,jdbcType=VARCHAR},
       sell_attr = #{sellAttr,jdbcType=VARCHAR},
@@ -37,19 +39,19 @@
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
-    select id, entity_id, item_id, status, image, sell_attr, price, version, is_valid, 
+    select id, entity_id, item_id, item_name, status, image, sell_attr, price, version, is_valid,
     create_time, update_time
     from item_sku
     where id = #{id,jdbcType=VARCHAR}
   </select>
   <select id="selectAll" resultMap="BaseResultMap">
-    select id, entity_id, item_id, status, image, sell_attr, price, version, is_valid, 
+    select id, entity_id, item_id, item_name, status, image, sell_attr, price, version, is_valid,
     create_time, update_time
     from item_sku
   </select>
 
   <select id="selectByItemId" resultMap="BaseResultMap">
-    select id, entity_id, item_id, status, image, sell_attr, price, version, is_valid,
+    select id, entity_id, item_id, item_name, status, image, sell_attr, price, version, is_valid,
     create_time, update_time
     from item_sku
     where item_id = #{itemId,jdbcType=VARCHAR}
