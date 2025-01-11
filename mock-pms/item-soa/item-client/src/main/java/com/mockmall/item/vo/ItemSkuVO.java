@@ -3,6 +3,7 @@ package com.mockmall.item.vo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -51,5 +52,5 @@ public class ItemSkuVO implements Serializable {
     /**
      * 价格
      */
-    private Integer price;
+    private BigDecimal price;
 }

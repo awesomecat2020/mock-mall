@@ -4,6 +4,8 @@ import com.mockmall.commonbase.base.BasePO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.math.BigDecimal;
+
 /**
  * ItemSku
  *
@@ -43,5 +45,5 @@ public class ItemSku extends BasePO {
     /**
      * 价格
      */
-    private Integer price;
+    private BigDecimal price;
 }
