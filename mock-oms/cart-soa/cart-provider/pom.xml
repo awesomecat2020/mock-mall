@@ -18,6 +18,8 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<cart-client.version>0.0.1-SNAPSHOT</cart-client.version>
+		<caffeine.version>2.9.3</caffeine.version>
+		<commons-pool2.version>2.6.0</commons-pool2.version>
 	</properties>
 
 	<dependencies>
@@ -26,6 +28,19 @@
 			<groupId>com.mockmall</groupId>
 			<artifactId>cart-client</artifactId>
 			<version>${cart-client.version}</version>
+		</dependency>
+
+		<!-- caffeine -->
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+			<version>${caffeine.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>${commons-pool2.version}</version>
 		</dependency>
 
 		<!-- spring -->
