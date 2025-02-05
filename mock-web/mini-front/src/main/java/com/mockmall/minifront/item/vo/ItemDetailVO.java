@@ -11,8 +11,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author mianxian
- * 2024/12/12 下午7:44
+ * @author ccomma
  */
 @Data
 public class ItemDetailVO implements Serializable {

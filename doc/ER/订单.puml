@@ -392,12 +392,16 @@ entity 回复 {
 ' ==================== 购物车 ====================
 entity 购物车 {
     id
+    分库主键（shardingKey）
     用户 id（userId）
+    店铺 id（entityId）
     商品 id（itemId）
     SKU id（itemSkuId）
+    商品主图（skuImage）
+    商品名称（itemName）
     商品数量（quantity）
     价格（price）
-    是否选中
+    购物车变化的原因（cartModifyType）
 }
 
 
