@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant "前端" as f #orange
+participant "mini-front" as mf
+participant "trade-platform" as tp
+participant "item-platform" as ip
+
+autonumber
+
+
+f -> mf: 计算账单
+mf -> tp: 计算账单
+
+== loadCart ==
+' userId、cartTime
+tp -> cart: 查询购物车
+tp -> ip: 健康检查
+
+
+@enduml

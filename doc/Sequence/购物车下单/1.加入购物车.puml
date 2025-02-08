@@ -10,17 +10,18 @@ autonumber
 ' price
 f -> mf: 加入购物车
 mf -> tp: 修改购物车
-tp -> c: 修改购物车
+tp -> c: 修改购物车（覆盖更新）
 c -> c: 查询用户
 c -> c: 用户锁
 c -> c: 查询 cartItem 列表
 c -> ip: 健康检查
 return
-
-
+c -> c: 合并 cartItem
 ' 拿到 price、fee、memberPrice
-mf -> tp: 算价
-tp -> ip: 算价
+c -> tp: 算价
+c -> c: 持久化
+
+tp -> ip: 补充计算优惠及其他信息
 ip --> mf
 
 @enduml
