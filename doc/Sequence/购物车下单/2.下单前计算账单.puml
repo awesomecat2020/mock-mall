@@ -16,6 +16,17 @@ mf -> tp: 计算账单
 ' userId、cartTime
 tp -> cart: 查询购物车
 tp -> ip: 健康检查
+tp -> tp: 构建 cart
+
+== 计算购物车账单 ==
+tp -> tp: 初始化：构建 bill
+activate tp
+' 会员卡支付/第三方支付（微信/支付宝）
+tp -> tp: 获取支付渠道
+activate tp
+deactivate tp
+deactivate tp
+
 
 
 @enduml
