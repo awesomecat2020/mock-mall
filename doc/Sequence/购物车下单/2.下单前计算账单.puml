@@ -5,6 +5,10 @@ participant "前端" as f #orange
 participant "mini-front" as mf
 participant "trade-platform" as tp
 participant "item-platform" as ip
+participant "user-soa" as u
+participant "营销中台" as pp
+participant "物流平台" as  l
+participant "pay-soa" as p
 
 autonumber
 
@@ -19,14 +23,38 @@ tp -> ip: 健康检查
 tp -> tp: 构建 cart
 
 == 计算购物车账单 ==
-tp -> tp: 初始化：构建 bill
+tp -> tp: 构建 bill
 activate tp
 ' 会员卡支付/第三方支付（微信/支付宝）
-tp -> tp: 获取支付渠道
+tp -> tp: 获取该场景支持的支付渠道
+activate tp
+deactivate tp
+tp -> tp: 库存不足商品校验
 activate tp
 deactivate tp
 deactivate tp
 
+tp -> tp: 构建履约信息
+activate tp
+tp -> u: 获取用户地址
+deactivate tp
 
+tp -> ip: 下单前商品算价
+' 原始总金额 = SUM(商品原价)
+' 折后总金额 = SUM(商品折后价)
+' 原始应收 = 原始总金额 + 配送费 + 税费 + ...
+' 折后应收 = 折后总金额 + 配送费 + 税费 + 其他费用 ...
+' 最终应收 = 折后应收 - SUM(各类优惠券、优惠活动、第三方优惠券等优惠手段)
+' 已付金额 = SUM(pay.fee)
+' 还需支付 = 最终应收 - 已付金额
+tp -> tp: 计算账单
+tp -> pp: 计算优惠
+tp -> l: 计算配送费
+
+== 获取进件信息 ==
+tp -> tp: 构建支付场景 PaymentScene
+tp -> p: 获取支付进件信息
+
+====
 
 @enduml
