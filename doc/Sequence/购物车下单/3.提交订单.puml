@@ -9,19 +9,26 @@ participant "item-platform" as ip
 participant "user-soa" as u
 participant "营销中台" as pp
 participant "物流平台" as  l
-participant "pay-soa" as p
+participant "order" as o
+participant "配置中心" as cc
+participant "任务中心" as j
+
 
 autonumber
 
 
-f -> mf: 计算账单
-mf -> tp: 计算账单
+f -> mf: 提交订单
+mf -> tp: 提交订单
+
+== 用户锁 ==
 
 == loadCart ==
+tp -> tp: 校验参数
 ' userId、cartTime
 tp -> c: 查询购物车
-tp -> ip: 健康检查
-tp -> tp: 构建 cart
+
+== 校验 ==
+tp -> tp: 校验参数
 
 == 计算购物车账单 ==
 tp -> tp: 构建 bill
@@ -52,19 +59,41 @@ tp -> tp: 计算账单
 tp -> pp: 计算优惠
 tp -> l: 计算配送费
 
-== 获取进件信息 ==
-tp -> tp: 构建支付场景 PaymentScene
-tp -> p: 获取支付进件信息
+== 下单 ==
+tp -> tp: 创建数据
+activate tp
 
-== 选择支付方式 ==
-tp -> tp: 选择支付方式
+tp -> tp: 构建数据 Order、OrderItem、Bill（ServiceBill、TotalPay）
+activate tp
+tp -> o: 获取订单码
+deactivate tp
 
-== 账单计算完成 ==
-' 计算好的账单存入 redis。支付时候通过账单 id 获取到账单减少一次计算，支付时候不用在计算账单。只做一次 check
-' 账单的缓存时间 30分 内没有支付 则需要重新计算并且去支付
-tp -> tp: 每个用户每个客户端只缓存一个账单
+tp -> tp: 初始化订单状态
+activate tp
+deactivate tp
 
-== 返回数据填充 ==
-tp-> tp: 构建 result
+tp -> cc: 获取支付超时配置（1天）
+tp -> tp: 生成支付超时任务
+activate tp
+deactivate tp
+
+tp -> tp: 构建订单商品流水
+activate tp
+deactivate tp
+
+deactivate tp
+
+tp -> tp: 预提交
+activate tp
+tp -> o: 保存数据（Order、OrderItem、Bill）
+tp -> j: 创建支付超时任务
+deactivate tp
+
+tp -> tp: 支付核销
+activate tp
+tp -> tp: 生成支付快照
+activate tp
+deactivate tp
+deactivate tp
 
 @enduml
